@@ -16,7 +16,7 @@ const DEMO_ACCOUNTS = [
   { email: "recruiter@northstar-works-demo.com", role: "employer", full_name: "Northstar Works Recruiter" },
   { email: "noah.patel@demo.org", role: "employer", full_name: "Noah Patel" },
   { email: "team_003@synthetic.example.com", role: "employer", full_name: "Team Member 003" },
-  { email: "samira.okafor@demo.com", role: "employer", full_name: "Samira Okafor" },
+  
   { email: "talent@blueorbit-labs-demo.com", role: "employer", full_name: "BlueOrbit Labs Talent" },
   { email: "maya.chen@demo.org", role: "employer", full_name: "Maya Chen" },
 ];
