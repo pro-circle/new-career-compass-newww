@@ -37,18 +37,17 @@ production database without reviewing the fixture and target first.
 
 ## Mapping notes
 
-The import populates jobs, candidates, applications, notifications, resumes,
-portfolio projects, offers, email templates, team invites, training sessions,
-training answers, coding challenges, interview questions, analytics metrics,
-the funnel, and hiring trends.
+The import populates companies, employer records, jobs, candidates,
+applications, cover letters, recruiter pipelines, outreach messages,
+notifications, resumes, portfolio projects and templates, offers, email
+templates, team invites, job-hunt settings/runs/proposals, account settings,
+training sessions and answers, coding challenges, interview questions,
+analytics metrics, the funnel, and hiring trends.
 
-Some source records intentionally remain source-only and are listed in the
-command summary. Authentication users and `profiles` are not created because
-their IDs must belong to real authentication accounts. For the same reason,
-job-hunt records whose destination columns require authentication UUIDs are
-not imported. Companies are folded into compatible job and offer fields;
-cover letters, outreach, and pipeline records have no matching tables in the
-current schema.
+Authentication users and `profiles` remain source-only during the normal
+seed because their IDs must belong to real authentication accounts. Apply the
+latest `docs/schema.sql` before rerunning the seed against an existing database;
+it adds the destination tables and columns required by the full fixture.
 
 Password placeholders are never read into destination rows.
 ## Demo sign-in accounts
@@ -63,9 +62,6 @@ noah.patel@demo.com
 Recruiters (employer role): recruiter@northstar-works-demo.com,
 noah.patel@demo.org, team_003@synthetic.example.com,
 talent@blueorbit-labs-demo.com, maya.chen@demo.org
-
-samira.okafor@demo.com appears in both source lists; one address can only be
-one account, so it is kept as a candidate and reported as a duplicate.
 
 The password is taken from `SEED_DEMO_PASSWORD` in `.env` and falls back to
 `DemoPass!2026`. Re-running the command reuses existing accounts and resets

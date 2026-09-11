@@ -3,3 +3,4 @@
 - [x] Add restrained visual animations and verify public build
 - [x] Add richer candidate profile data, formal letter inputs, and external application tracking
 - [ ] Test each candidate flow end to end and remove remaining placeholder states
+- [x] Align database tables and seed mappings with the full synthetic fixture
