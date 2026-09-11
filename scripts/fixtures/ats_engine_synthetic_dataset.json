@@ -1,0 +1,3891 @@
+{
+  "metadata": {
+    "dataset_name": "ATS Engine Synthetic E2E Fixture",
+    "version": "1.0.0",
+    "generated_at": "2026-09-11T06:16:00Z",
+    "deterministic_seed": 20260911,
+    "fictional_only": true,
+    "base_url_domain_policy": "All URLs use reserved example.invalid-style domains and are non-functional test placeholders.",
+    "notes": "Synthetic data only. No real people, companies, emails, API keys, or personal information."
+  },
+  "1. Users": [
+    {
+      "id": "usr_cand_001",
+      "role": "candidate",
+      "email": "alex.rivera@demo.invalid",
+      "password_placeholder": "TEST_ONLY_HASHED_PASSWORD_001",
+      "account_status": "active",
+      "created_at": "2026-01-05T09:00:00Z",
+      "updated_at": "2026-08-13T09:00:00Z"
+    },
+    {
+      "id": "usr_cand_002",
+      "role": "candidate",
+      "email": "maya.chen@demo.invalid",
+      "password_placeholder": "TEST_ONLY_HASHED_PASSWORD_002",
+      "account_status": "active",
+      "created_at": "2026-01-17T09:00:00Z",
+      "updated_at": "2026-07-04T09:00:00Z"
+    },
+    {
+      "id": "usr_cand_003",
+      "role": "candidate",
+      "email": "samira.okafor@demo.invalid",
+      "password_placeholder": "TEST_ONLY_HASHED_PASSWORD_003",
+      "account_status": "active",
+      "created_at": "2026-01-25T09:00:00Z",
+      "updated_at": "2026-06-24T09:00:00Z"
+    },
+    {
+      "id": "usr_cand_004",
+      "role": "candidate",
+      "email": "noah.patel@demo.invalid",
+      "password_placeholder": "TEST_ONLY_HASHED_PASSWORD_004",
+      "account_status": "active",
+      "created_at": "2026-02-04T09:00:00Z",
+      "updated_at": "2026-05-25T09:00:00Z"
+    },
+    {
+      "id": "usr_emp_001",
+      "role": "employer",
+      "email": "recruiter@northstar-works.invalid",
+      "password_placeholder": "TEST_ONLY_HASHED_PASSWORD_101",
+      "account_status": "active",
+      "created_at": "2026-01-09T09:00:00Z",
+      "updated_at": "2026-05-05T09:00:00Z"
+    },
+    {
+      "id": "usr_emp_002",
+      "role": "employer",
+      "email": "talent@blueorbit-labs.invalid",
+      "password_placeholder": "TEST_ONLY_HASHED_PASSWORD_102",
+      "account_status": "active",
+      "created_at": "2026-01-13T09:00:00Z",
+      "updated_at": "2026-04-25T09:00:00Z"
+    }
+  ],
+  "2. Candidate profiles": [
+    {
+      "id": "cand_001",
+      "user_id": "usr_cand_001",
+      "full_name": "Alex Rivera",
+      "headline": "Full-Stack Engineer focused on data-rich product experiences",
+      "location": "Hyderabad, India",
+      "professional_summary": "Full-stack engineer with 6 years of experience building TypeScript, React, Python, and PostgreSQL products. Strong at translating ambiguous product requirements into measurable workflows, resilient APIs, and accessible interfaces.",
+      "phone_placeholder": "+91-00000-10001",
+      "portfolio_url": "https://alex-rivera-portfolio.example.invalid",
+      "linkedin_url": "https://linkedin.example.invalid/in/alex-rivera",
+      "github_url": "https://github.example.invalid/alex-rivera",
+      "years_experience": 6,
+      "work_preferences": {
+        "mode": [
+          "remote",
+          "hybrid"
+        ],
+        "employment_type": [
+          "full-time"
+        ],
+        "work_hours": "flexible"
+      },
+      "desired_roles": [
+        "Full-stack Engineer",
+        "Backend Engineer",
+        "Frontend Engineer"
+      ],
+      "desired_salary_range": {
+        "currency": "INR",
+        "min": 1800000,
+        "max": 2400000,
+        "period": "annual"
+      },
+      "availability": "available_in_30_days",
+      "skills": [
+        "TypeScript",
+        "React",
+        "Next.js",
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "Docker",
+        "AWS",
+        "REST APIs",
+        "Testing",
+        "Data Visualization"
+      ],
+      "languages": [
+        {
+          "name": "English",
+          "level": "C1"
+        },
+        {
+          "name": "Spanish",
+          "level": "B1"
+        },
+        {
+          "name": "Hindi",
+          "level": "B2"
+        }
+      ],
+      "education_history": [
+        {
+          "id": "edu_001",
+          "institution": "Riverbend Institute of Technology",
+          "degree": "B.Tech",
+          "field": "Computer Science",
+          "start_date": "2016-07-01",
+          "end_date": "2020-05-15"
+        }
+      ],
+      "work_experience": [
+        {
+          "id": "work_001",
+          "company_name": "Northstar Works",
+          "title": "Software Engineer",
+          "start_date": "2022-02-01",
+          "end_date": null,
+          "highlights": [
+            "Built workflow APIs used by 20k+ monthly sessions",
+            "Reduced p95 API latency by 34%"
+          ]
+        },
+        {
+          "id": "work_002",
+          "company_name": "CedarPeak Systems",
+          "title": "Junior Software Engineer",
+          "start_date": "2020-07-01",
+          "end_date": "2022-01-15",
+          "highlights": [
+            "Delivered React admin dashboards",
+            "Automated regression checks for 40+ service endpoints"
+          ]
+        }
+      ],
+      "certifications": [
+        {
+          "name": "AWS Certified Cloud Practitioner",
+          "issuer": "Fictional Cloud Academy",
+          "year": 2024
+        }
+      ],
+      "achievements": [
+        "Led a migration that reduced frontend bundle size by 28%.",
+        "Mentored three interns through production delivery."
+      ],
+      "profile_completion_status": "complete",
+      "onboarding_completion_status": "complete",
+      "flags": []
+    },
+    {
+      "id": "cand_002",
+      "user_id": "usr_cand_002",
+      "full_name": "Maya Chen",
+      "headline": "Product Designer transitioning into design systems",
+      "location": "Bengaluru, India",
+      "professional_summary": "Product designer with 4 years of experience across B2B interfaces and mobile experiences. Currently deepening design-systems and accessibility skills.",
+      "phone_placeholder": "+91-00000-10002",
+      "portfolio_url": "https://maya-chen-portfolio.example.invalid",
+      "linkedin_url": "https://linkedin.example.invalid/in/maya-chen",
+      "github_url": null,
+      "years_experience": 4,
+      "work_preferences": {
+        "mode": [
+          "hybrid"
+        ],
+        "employment_type": [
+          "full-time",
+          "contract"
+        ],
+        "work_hours": "standard"
+      },
+      "desired_roles": [
+        "Product Designer",
+        "UX Designer"
+      ],
+      "desired_salary_range": {
+        "currency": "INR",
+        "min": 1400000,
+        "max": 1900000,
+        "period": "annual"
+      },
+      "availability": "available_now",
+      "skills": [
+        "Figma",
+        "Design Systems",
+        "UX Research",
+        "Prototyping",
+        "Accessibility"
+      ],
+      "languages": [
+        {
+          "name": "English",
+          "level": "C1"
+        },
+        {
+          "name": "Mandarin",
+          "level": "B2"
+        }
+      ],
+      "education_history": [
+        {
+          "id": "edu_002",
+          "institution": "Lakeside School of Design",
+          "degree": "B.Des",
+          "field": "Interaction Design",
+          "start_date": "2018-07-01",
+          "end_date": "2022-05-15"
+        }
+      ],
+      "work_experience": [
+        {
+          "id": "work_003",
+          "company_name": "BlueOrbit Labs",
+          "title": "Product Designer",
+          "start_date": "2022-06-01",
+          "end_date": null,
+          "highlights": [
+            "Created shared component patterns",
+            "Ran usability studies for analytics workflows"
+          ]
+        }
+      ],
+      "certifications": [],
+      "achievements": [
+        "Designed a reusable onboarding pattern library."
+      ],
+      "profile_completion_status": "partial",
+      "onboarding_completion_status": "complete",
+      "flags": [
+        "missing_github_url",
+        "missing_certifications"
+      ]
+    },
+    {
+      "id": "cand_003",
+      "user_id": "usr_cand_003",
+      "full_name": "Samira Okafor",
+      "headline": "Data Analyst | SQL, Python, dashboards",
+      "location": "Nairobi, Kenya",
+      "professional_summary": "Data analyst with a practical focus on KPI design, SQL, and stakeholder reporting.",
+      "phone_placeholder": "+254-000-10003",
+      "portfolio_url": "https://samira-okafor-portfolio.example.invalid",
+      "linkedin_url": null,
+      "github_url": null,
+      "years_experience": 3,
+      "work_preferences": {
+        "mode": [
+          "remote"
+        ],
+        "employment_type": [
+          "full-time"
+        ],
+        "work_hours": "flexible"
+      },
+      "desired_roles": [
+        "Data Analyst",
+        "Analytics Engineer"
+      ],
+      "desired_salary_range": {
+        "currency": "USD",
+        "min": 45000,
+        "max": 65000,
+        "period": "annual"
+      },
+      "availability": "available_in_60_days",
+      "skills": [
+        "SQL",
+        "Python",
+        "Pandas",
+        "Excel",
+        "Power BI"
+      ],
+      "languages": [
+        {
+          "name": "English",
+          "level": "C1"
+        },
+        {
+          "name": "French",
+          "level": "A2"
+        }
+      ],
+      "education_history": [
+        {
+          "id": "edu_003",
+          "institution": "Eastland University",
+          "degree": "B.Sc.",
+          "field": "Statistics",
+          "start_date": "2019-08-01",
+          "end_date": "2023-06-15"
+        }
+      ],
+      "work_experience": [
+        {
+          "id": "work_004",
+          "company_name": "Metric Grove",
+          "title": "Data Analyst",
+          "start_date": "2023-08-01",
+          "end_date": null,
+          "highlights": [
+            "Built weekly revenue dashboards",
+            "Standardized KPI definitions"
+          ]
+        }
+      ],
+      "certifications": [
+        {
+          "name": "Analytics Foundations",
+          "issuer": "Fictional Data Guild",
+          "year": 2025
+        }
+      ],
+      "achievements": [],
+      "profile_completion_status": "missing_optional_fields",
+      "onboarding_completion_status": "complete",
+      "flags": [
+        "missing_linkedin_url",
+        "missing_github_url",
+        "missing_achievements"
+      ]
+    },
+    {
+      "id": "cand_004",
+      "user_id": "usr_cand_004",
+      "full_name": "Noah Patel",
+      "headline": "",
+      "location": "",
+      "professional_summary": "",
+      "phone_placeholder": null,
+      "portfolio_url": null,
+      "linkedin_url": null,
+      "github_url": null,
+      "years_experience": 0,
+      "work_preferences": {
+        "mode": [],
+        "employment_type": [],
+        "work_hours": null
+      },
+      "desired_roles": [],
+      "desired_salary_range": null,
+      "availability": "unknown",
+      "skills": [],
+      "languages": [],
+      "education_history": [],
+      "work_experience": [],
+      "certifications": [],
+      "achievements": [],
+      "profile_completion_status": "empty",
+      "onboarding_completion_status": "not_started",
+      "flags": [
+        "empty_profile",
+        "no_resume",
+        "no_portfolio_projects"
+      ]
+    }
+  ],
+  "3. Employer profiles": [
+    {
+      "id": "emp_001",
+      "user_id": "usr_emp_001",
+      "company_id": "co_001",
+      "recruiter_profile": {
+        "full_name": "Jordan Blake",
+        "title": "Talent Lead",
+        "phone_placeholder": "+91-00000-20001"
+      },
+      "notification_settings": {
+        "email": true,
+        "in_app": true,
+        "urgent_only_sms": false
+      },
+      "subscription_plan": "growth",
+      "plan_status": "active"
+    },
+    {
+      "id": "emp_002",
+      "user_id": "usr_emp_002",
+      "company_id": "co_002",
+      "recruiter_profile": {
+        "full_name": "Elena Park",
+        "title": "Senior Recruiter",
+        "phone_placeholder": "+91-00000-20002"
+      },
+      "notification_settings": {
+        "email": true,
+        "in_app": true,
+        "urgent_only_sms": false
+      },
+      "subscription_plan": "starter",
+      "plan_status": "active"
+    }
+  ],
+  "4. Companies": [
+    {
+      "id": "co_001",
+      "name": "Northstar Works",
+      "description": "Fictional product studio building workflow software for modern operations teams.",
+      "industry": "B2B Software",
+      "website": "https://northstar-works.example.invalid",
+      "logo_placeholder": "gradient:northstar-blue-violet",
+      "location": "Pune, India",
+      "team_size": 85,
+      "created_at": "2026-01-09T09:00:00Z"
+    },
+    {
+      "id": "co_002",
+      "name": "BlueOrbit Labs",
+      "description": "Fictional engineering lab creating analytics, automation, and developer productivity products.",
+      "industry": "Technology",
+      "website": "https://blueorbit-labs.example.invalid",
+      "logo_placeholder": "gradient:blueorbit-cyan-indigo",
+      "location": "Bengaluru, India",
+      "team_size": 140,
+      "created_at": "2026-01-13T09:00:00Z"
+    },
+    {
+      "id": "co_003",
+      "name": "CedarPeak Systems",
+      "description": "Fictional cloud and observability consultancy serving distributed software teams.",
+      "industry": "Cloud Services",
+      "website": "https://cedarpeak-systems.example.invalid",
+      "logo_placeholder": "gradient:cedar-green-slate",
+      "location": "Chennai, India",
+      "team_size": 42,
+      "created_at": "2026-01-20T09:00:00Z"
+    }
+  ],
+  "5. Resumes": [
+    {
+      "id": "resume_001",
+      "candidate_id": "cand_001",
+      "title": "Alex Rivera — Full-Stack Engineer Resume",
+      "professional_summary": "Full-stack engineer with 6 years of experience delivering TypeScript, React, Python, and PostgreSQL products with measurable performance and reliability gains.",
+      "experience_entries": [
+        {
+          "company": "Northstar Works",
+          "title": "Software Engineer",
+          "period": "2022-02 to Present",
+          "bullets": [
+            "Built workflow APIs serving 20k+ monthly sessions",
+            "Cut p95 latency 34% via query and caching improvements"
+          ]
+        },
+        {
+          "company": "CedarPeak Systems",
+          "title": "Junior Software Engineer",
+          "period": "2020-07 to 2022-01",
+          "bullets": [
+            "Built React admin dashboards",
+            "Automated API regression checks"
+          ]
+        }
+      ],
+      "education_entries": [
+        {
+          "institution": "Riverbend Institute of Technology",
+          "degree": "B.Tech Computer Science",
+          "year": 2020
+        }
+      ],
+      "skills": [
+        "TypeScript",
+        "React",
+        "Next.js",
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "Docker",
+        "AWS",
+        "REST APIs",
+        "Testing",
+        "Data Visualization"
+      ],
+      "projects": [
+        "proj_001",
+        "proj_002",
+        "proj_003"
+      ],
+      "ats_score": 94,
+      "ats_recommendations": [
+        "Add one quantified accessibility outcome.",
+        "Use the exact phrase 'observability' once for platform roles."
+      ],
+      "optimization_status": "optimized",
+      "original_resume_text": "Alex Rivera\nFull-Stack Engineer\nBuilt workflow software and dashboards with React, Python, and PostgreSQL.\nExperience: Northstar Works; CedarPeak Systems.",
+      "optimized_resume_text": "Alex Rivera\nFull-Stack Engineer | TypeScript | React | Python | PostgreSQL\nPROFILE\nFull-stack engineer with 6 years delivering workflow products, measurable performance improvements, and resilient APIs.\nEXPERIENCE\nNorthstar Works — Software Engineer\n• Built workflow APIs supporting 20k+ monthly sessions.\n• Reduced p95 latency by 34% through query tuning and caching.\nCedarPeak Systems — Junior Software Engineer\n• Delivered React dashboards and automated endpoint regression checks.",
+      "translated_resume_versions": {
+        "es": "Alex Rivera — Ingeniero de Software Full-Stack...",
+        "fr": "Alex Rivera — Ingénieur Logiciel Full-Stack...",
+        "de": "Alex Rivera — Full-Stack-Softwareentwickler..."
+      },
+      "created_at": "2026-02-04T09:00:00Z",
+      "updated_at": "2026-07-29T09:00:00Z"
+    },
+    {
+      "id": "resume_002",
+      "candidate_id": "cand_002",
+      "title": "Maya Chen — Product Designer Draft",
+      "professional_summary": "Product designer with 4 years of experience in B2B interfaces and mobile experiences.",
+      "experience_entries": [
+        {
+          "company": "BlueOrbit Labs",
+          "title": "Product Designer",
+          "period": "2022-06 to Present",
+          "bullets": [
+            "Designed shared component patterns"
+          ]
+        }
+      ],
+      "education_entries": [
+        {
+          "institution": "Lakeside School of Design",
+          "degree": "B.Des Interaction Design",
+          "year": 2022
+        }
+      ],
+      "skills": [
+        "Figma",
+        "Design Systems",
+        "UX Research",
+        "Prototyping",
+        "Accessibility"
+      ],
+      "projects": [
+        "proj_004",
+        "proj_005"
+      ],
+      "ats_score": 71,
+      "ats_recommendations": [
+        "Add measurable outcomes.",
+        "Add accessibility keywords with concrete examples.",
+        "Include a portfolio URL in the header."
+      ],
+      "optimization_status": "needs_improvement",
+      "original_resume_text": "Maya Chen\nProduct Designer\nWorked on B2B products and design systems.",
+      "optimized_resume_text": "",
+      "translated_resume_versions": {
+        "es": "",
+        "fr": "",
+        "de": ""
+      },
+      "created_at": "2026-02-14T09:00:00Z",
+      "updated_at": "2026-06-04T09:00:00Z"
+    },
+    {
+      "id": "resume_003",
+      "candidate_id": "cand_003",
+      "title": "Samira Okafor — Analyst Resume",
+      "professional_summary": "Data analyst focused on SQL, Python, and KPI reporting.",
+      "experience_entries": [
+        {
+          "company": "Metric Grove",
+          "title": "Data Analyst",
+          "period": "2023-08 to Present",
+          "bullets": [
+            "Built weekly revenue dashboards"
+          ]
+        }
+      ],
+      "education_entries": [],
+      "skills": [
+        "SQL",
+        "Python",
+        "Pandas",
+        "Excel",
+        "Power BI"
+      ],
+      "projects": [],
+      "ats_score": 52,
+      "ats_recommendations": [
+        "Education section is missing.",
+        "Add 2–3 project examples.",
+        "Add quantified impact to experience."
+      ],
+      "optimization_status": "missing_fields",
+      "original_resume_text": "Samira Okafor\nData Analyst\nSQL, Python, dashboards.",
+      "optimized_resume_text": null,
+      "translated_resume_versions": {
+        "es": null,
+        "fr": null,
+        "de": null
+      },
+      "created_at": "2026-03-01T09:00:00Z",
+      "updated_at": "2026-05-05T09:00:00Z"
+    }
+  ],
+  "6. Portfolio projects": [
+    {
+      "id": "proj_001",
+      "candidate_id": "cand_001",
+      "title": "OpsFlow Workbench",
+      "role": "Full-Stack Engineer",
+      "year": 2026,
+      "description": "Workflow management web application with role-based queues, audit events, and data-rich dashboards.",
+      "tags": [
+        "web-application",
+        "react",
+        "fastapi",
+        "postgresql"
+      ],
+      "project_url": "https://opsflow-workbench.example.invalid",
+      "github_url": "https://github.example.invalid/alex-rivera/opsflow-workbench",
+      "image_or_gradient_placeholder": "gradient:indigo-cyan",
+      "visibility_status": "public"
+    },
+    {
+      "id": "proj_002",
+      "candidate_id": "cand_001",
+      "title": "SignalBoard Analytics",
+      "role": "Data Product Engineer",
+      "year": 2025,
+      "description": "Interactive KPI dashboard for exploring operational metrics with drill-down filters.",
+      "tags": [
+        "data-dashboard",
+        "typescript",
+        "visualization"
+      ],
+      "project_url": "https://signalboard.example.invalid",
+      "github_url": "https://github.example.invalid/alex-rivera/signalboard",
+      "image_or_gradient_placeholder": "gradient:blue-violet",
+      "visibility_status": "public"
+    },
+    {
+      "id": "proj_003",
+      "candidate_id": "cand_001",
+      "title": "API Reliability Kit",
+      "role": "Backend Engineer",
+      "year": 2024,
+      "description": "Reusable API validation and health-check patterns for Python services.",
+      "tags": [
+        "api-backend",
+        "python",
+        "testing"
+      ],
+      "project_url": "https://api-reliability-kit.example.invalid",
+      "github_url": "https://github.example.invalid/alex-rivera/api-reliability-kit",
+      "image_or_gradient_placeholder": "gradient:slate-teal",
+      "visibility_status": "public"
+    },
+    {
+      "id": "proj_004",
+      "candidate_id": "cand_002",
+      "title": "Orbit Design System",
+      "role": "Product Designer",
+      "year": 2026,
+      "description": "Accessible component and token system for analytics products.",
+      "tags": [
+        "design-system",
+        "figma",
+        "accessibility"
+      ],
+      "project_url": "https://orbit-design-system.example.invalid",
+      "github_url": null,
+      "image_or_gradient_placeholder": "gradient:rose-violet",
+      "visibility_status": "public"
+    },
+    {
+      "id": "proj_005",
+      "candidate_id": "cand_002",
+      "title": "PocketBudget",
+      "role": "Mobile Product Designer",
+      "year": 2024,
+      "description": "Mobile budgeting prototype covering onboarding, recurring expenses, and insights.",
+      "tags": [
+        "mobile-application",
+        "ux",
+        "prototype"
+      ],
+      "project_url": "https://pocketbudget.example.invalid",
+      "github_url": null,
+      "image_or_gradient_placeholder": "gradient:mint-coral",
+      "visibility_status": "public"
+    },
+    {
+      "id": "proj_006",
+      "candidate_id": "cand_003",
+      "title": "Retail Pulse Dashboard",
+      "role": "Data Analyst",
+      "year": 2025,
+      "description": "Sales and margin dashboard with KPI definitions, segmentation, and anomaly flags.",
+      "tags": [
+        "data-dashboard",
+        "sql",
+        "power-bi"
+      ],
+      "project_url": "https://retail-pulse.example.invalid",
+      "github_url": "https://github.example.invalid/samira-okafor/retail-pulse",
+      "image_or_gradient_placeholder": "gradient:emerald-blue",
+      "visibility_status": "public"
+    },
+    {
+      "id": "proj_007",
+      "candidate_id": "cand_003",
+      "title": "Churn Risk Classifier",
+      "role": "Junior Data Scientist",
+      "year": 2025,
+      "description": "Supervised learning experiment predicting customer churn from synthetic account activity.",
+      "tags": [
+        "machine-learning",
+        "python",
+        "classification"
+      ],
+      "project_url": "https://churn-risk.example.invalid",
+      "github_url": "https://github.example.invalid/samira-okafor/churn-risk",
+      "image_or_gradient_placeholder": "gradient:amber-indigo",
+      "visibility_status": "public"
+    },
+    {
+      "id": "proj_008",
+      "candidate_id": "cand_002",
+      "title": "Open UI Accessibility Fixes",
+      "role": "Open-Source Contributor",
+      "year": 2025,
+      "description": "Fictional open-source contribution adding keyboard navigation and semantic labels to a component set.",
+      "tags": [
+        "open-source",
+        "accessibility",
+        "frontend"
+      ],
+      "project_url": "https://open-ui-a11y.example.invalid",
+      "github_url": "https://github.example.invalid/maya-chen/open-ui-a11y",
+      "image_or_gradient_placeholder": "gradient:cyan-lime",
+      "visibility_status": "public"
+    },
+    {
+      "id": "proj_009",
+      "candidate_id": "cand_001",
+      "title": "GreenCart Client Portal",
+      "role": "Freelance Full-Stack Engineer",
+      "year": 2023,
+      "description": "Freelance portal for a fictional retail client with orders, inventory, and customer support views.",
+      "tags": [
+        "freelance-client",
+        "full-stack",
+        "postgresql"
+      ],
+      "project_url": "https://greencart-portal.example.invalid",
+      "github_url": null,
+      "image_or_gradient_placeholder": "gradient:green-gold",
+      "visibility_status": "unlisted"
+    }
+  ],
+  "portfolio_templates": [
+    {
+      "id": "ptpl_001",
+      "name": "Minimal Engineering",
+      "category": "engineering",
+      "sections": [
+        "hero",
+        "experience",
+        "featured_projects",
+        "skills",
+        "contact"
+      ],
+      "theme": "navy-light",
+      "active": true
+    },
+    {
+      "id": "ptpl_002",
+      "name": "Product Designer Grid",
+      "category": "design",
+      "sections": [
+        "intro",
+        "selected_work",
+        "process",
+        "skills",
+        "contact"
+      ],
+      "theme": "violet-neutral",
+      "active": true
+    },
+    {
+      "id": "ptpl_003",
+      "name": "Analyst Case Study",
+      "category": "data",
+      "sections": [
+        "summary",
+        "case_studies",
+        "toolkit",
+        "impact",
+        "contact"
+      ],
+      "theme": "blue-slate",
+      "active": false
+    }
+  ],
+  "portfolio_drafts": [
+    {
+      "id": "pdraft_001",
+      "candidate_id": "cand_003",
+      "title": "AI-Generated Demand Forecasting Dashboard",
+      "role": "Data Analyst",
+      "year": 2026,
+      "description": "Draft generated from candidate skills; requires validation of metrics, screenshots, and source data before publication.",
+      "tags": [
+        "ai-generated-draft",
+        "forecasting",
+        "dashboard"
+      ],
+      "project_url": null,
+      "github_url": null,
+      "image_or_gradient_placeholder": "gradient:ai-sky-purple",
+      "visibility_status": "draft"
+    }
+  ],
+  "7. Jobs": [
+    {
+      "id": "job_001",
+      "company_id": "co_001",
+      "title": "Frontend Engineer",
+      "location": "Pune, India",
+      "mode": "hybrid",
+      "employment_type": "full-time",
+      "salary_range": {
+        "currency": "INR",
+        "min": 1800000,
+        "max": 2400000,
+        "period": "annual"
+      },
+      "description": "Fictional frontend engineer role responsible for delivering reliable, measurable product outcomes in a collaborative engineering environment.",
+      "responsibilities": [
+        "Own core frontend engineer deliverables.",
+        "Collaborate cross-functionally.",
+        "Document decisions and outcomes.",
+        "Improve quality through measurable feedback loops."
+      ],
+      "required_skills": [
+        "TypeScript",
+        "React",
+        "Next.js",
+        "CSS"
+      ],
+      "preferred_skills": [
+        "Accessibility",
+        "Testing"
+      ],
+      "experience_level": "mid",
+      "benefits": [
+        "Health allowance",
+        "Learning budget",
+        "Flexible leave",
+        "Equipment support"
+      ],
+      "application_url": "https://jobs.northstar.example.invalid/job_001",
+      "external_application_url": null,
+      "status": "published",
+      "created_date": "2026-02-01",
+      "closing_date": "2026-10-15",
+      "source": "ATS Engine synthetic seed",
+      "incomplete_optional_data": false,
+      "match_scores_by_candidate": {
+        "cand_001": 75,
+        "cand_002": 0,
+        "cand_003": 0,
+        "cand_004": 0
+      }
+    },
+    {
+      "id": "job_002",
+      "company_id": "co_003",
+      "title": "Backend Engineer",
+      "location": "Chennai, India",
+      "mode": "hybrid",
+      "employment_type": "full-time",
+      "salary_range": {
+        "currency": "INR",
+        "min": 1900000,
+        "max": 2600000,
+        "period": "annual"
+      },
+      "description": "Fictional backend engineer role responsible for delivering reliable, measurable product outcomes in a collaborative engineering environment.",
+      "responsibilities": [
+        "Own core backend engineer deliverables.",
+        "Collaborate cross-functionally.",
+        "Document decisions and outcomes.",
+        "Improve quality through measurable feedback loops."
+      ],
+      "required_skills": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "REST APIs"
+      ],
+      "preferred_skills": [
+        "Docker",
+        "AWS"
+      ],
+      "experience_level": "mid",
+      "benefits": [
+        "Health allowance",
+        "Learning budget",
+        "Flexible leave",
+        "Equipment support"
+      ],
+      "application_url": "https://jobs.cedarpeak.example.invalid/job_002",
+      "external_application_url": null,
+      "status": "published",
+      "created_date": "2026-02-03",
+      "closing_date": "2026-11-15",
+      "source": "ATS Engine synthetic seed",
+      "incomplete_optional_data": false,
+      "match_scores_by_candidate": {
+        "cand_001": 100,
+        "cand_002": 0,
+        "cand_003": 25,
+        "cand_004": 0
+      }
+    },
+    {
+      "id": "job_003",
+      "company_id": "co_001",
+      "title": "Full-stack Engineer",
+      "location": "Hyderabad, India",
+      "mode": "remote",
+      "employment_type": "full-time",
+      "salary_range": {
+        "currency": "INR",
+        "min": 2000000,
+        "max": 2800000,
+        "period": "annual"
+      },
+      "description": "Fictional full-stack engineer role responsible for delivering reliable, measurable product outcomes in a collaborative engineering environment.",
+      "responsibilities": [
+        "Own core full-stack engineer deliverables.",
+        "Collaborate cross-functionally.",
+        "Document decisions and outcomes.",
+        "Improve quality through measurable feedback loops."
+      ],
+      "required_skills": [
+        "TypeScript",
+        "React",
+        "Python",
+        "PostgreSQL"
+      ],
+      "preferred_skills": [
+        "AWS",
+        "Observability"
+      ],
+      "experience_level": "mid",
+      "benefits": [
+        "Health allowance",
+        "Learning budget",
+        "Flexible leave",
+        "Equipment support"
+      ],
+      "application_url": "https://jobs.northstar.example.invalid/job_003",
+      "external_application_url": null,
+      "status": "published",
+      "created_date": "2026-02-05",
+      "closing_date": "2026-10-30",
+      "source": "ATS Engine synthetic seed",
+      "incomplete_optional_data": false,
+      "match_scores_by_candidate": {
+        "cand_001": 98,
+        "cand_002": 0,
+        "cand_003": 25,
+        "cand_004": 0
+      }
+    },
+    {
+      "id": "job_004",
+      "company_id": "co_002",
+      "title": "Product Designer",
+      "location": "Bengaluru, India",
+      "mode": "hybrid",
+      "employment_type": "full-time",
+      "salary_range": {
+        "currency": "INR",
+        "min": 1500000,
+        "max": 2200000,
+        "period": "annual"
+      },
+      "description": "Fictional product designer role responsible for delivering reliable, measurable product outcomes in a collaborative engineering environment.",
+      "responsibilities": [
+        "Own core product designer deliverables.",
+        "Collaborate cross-functionally.",
+        "Document decisions and outcomes.",
+        "Improve quality through measurable feedback loops."
+      ],
+      "required_skills": [
+        "Figma",
+        "Design Systems",
+        "UX Research"
+      ],
+      "preferred_skills": [
+        "Accessibility",
+        "Prototyping"
+      ],
+      "experience_level": "mid",
+      "benefits": [
+        "Health allowance",
+        "Learning budget",
+        "Flexible leave",
+        "Equipment support"
+      ],
+      "application_url": "https://jobs.blueorbit.example.invalid/job_004",
+      "external_application_url": null,
+      "status": "published",
+      "created_date": "2026-02-06",
+      "closing_date": "2026-10-25",
+      "source": "ATS Engine synthetic seed",
+      "incomplete_optional_data": false,
+      "match_scores_by_candidate": {
+        "cand_001": 0,
+        "cand_002": 92,
+        "cand_003": 0,
+        "cand_004": 0
+      }
+    },
+    {
+      "id": "job_005",
+      "company_id": "co_002",
+      "title": "Data Analyst",
+      "location": "Bengaluru, India",
+      "mode": "remote",
+      "employment_type": "full-time",
+      "salary_range": {
+        "currency": "INR",
+        "min": 1100000,
+        "max": 1700000,
+        "period": "annual"
+      },
+      "description": "Fictional data analyst role responsible for delivering reliable, measurable product outcomes in a collaborative engineering environment.",
+      "responsibilities": [
+        "Own core data analyst deliverables.",
+        "Collaborate cross-functionally.",
+        "Document decisions and outcomes.",
+        "Improve quality through measurable feedback loops."
+      ],
+      "required_skills": [
+        "SQL",
+        "Python",
+        "Excel",
+        "Power BI"
+      ],
+      "preferred_skills": [
+        "dbt",
+        "Statistics"
+      ],
+      "experience_level": "junior",
+      "benefits": [
+        "Health allowance",
+        "Learning budget",
+        "Flexible leave",
+        "Equipment support"
+      ],
+      "application_url": "https://jobs.blueorbit.example.invalid/job_005",
+      "external_application_url": null,
+      "status": "published",
+      "created_date": "2026-02-07",
+      "closing_date": "2026-11-05",
+      "source": "ATS Engine synthetic seed",
+      "incomplete_optional_data": false,
+      "match_scores_by_candidate": {
+        "cand_001": 25,
+        "cand_002": 0,
+        "cand_003": 96,
+        "cand_004": 0
+      }
+    },
+    {
+      "id": "job_006",
+      "company_id": "co_003",
+      "title": "Data Scientist",
+      "location": "Chennai, India",
+      "mode": "hybrid",
+      "employment_type": "full-time",
+      "salary_range": {
+        "currency": "INR",
+        "min": 1800000,
+        "max": 2600000,
+        "period": "annual"
+      },
+      "description": "Fictional data scientist role responsible for delivering reliable, measurable product outcomes in a collaborative engineering environment.",
+      "responsibilities": [
+        "Own core data scientist deliverables.",
+        "Collaborate cross-functionally.",
+        "Document decisions and outcomes.",
+        "Improve quality through measurable feedback loops."
+      ],
+      "required_skills": [
+        "Python",
+        "SQL",
+        "Machine Learning"
+      ],
+      "preferred_skills": [
+        "MLOps",
+        "TensorFlow"
+      ],
+      "experience_level": "mid",
+      "benefits": [
+        "Health allowance",
+        "Learning budget",
+        "Flexible leave",
+        "Equipment support"
+      ],
+      "application_url": "https://jobs.cedarpeak.example.invalid/job_006",
+      "external_application_url": null,
+      "status": "published",
+      "created_date": "2026-02-09",
+      "closing_date": "2026-11-20",
+      "source": "ATS Engine synthetic seed",
+      "incomplete_optional_data": false,
+      "match_scores_by_candidate": {
+        "cand_001": 33,
+        "cand_002": 0,
+        "cand_003": 67,
+        "cand_004": 0
+      }
+    },
+    {
+      "id": "job_007",
+      "company_id": "co_001",
+      "title": "Product Manager",
+      "location": "Pune, India",
+      "mode": "hybrid",
+      "employment_type": "full-time",
+      "salary_range": {
+        "currency": "INR",
+        "min": 2200000,
+        "max": 3200000,
+        "period": "annual"
+      },
+      "description": "Fictional product manager role responsible for delivering reliable, measurable product outcomes in a collaborative engineering environment.",
+      "responsibilities": [
+        "Own core product manager deliverables.",
+        "Collaborate cross-functionally.",
+        "Document decisions and outcomes.",
+        "Improve quality through measurable feedback loops."
+      ],
+      "required_skills": [
+        "Product Strategy",
+        "Roadmapping",
+        "Analytics"
+      ],
+      "preferred_skills": [
+        "B2B SaaS",
+        "SQL"
+      ],
+      "experience_level": "senior",
+      "benefits": [
+        "Health allowance",
+        "Learning budget",
+        "Flexible leave",
+        "Equipment support"
+      ],
+      "application_url": "https://jobs.northstar.example.invalid/job_007",
+      "external_application_url": null,
+      "status": "published",
+      "created_date": "2026-02-10",
+      "closing_date": "2026-10-10",
+      "source": "ATS Engine synthetic seed",
+      "incomplete_optional_data": false,
+      "match_scores_by_candidate": {
+        "cand_001": 0,
+        "cand_002": 0,
+        "cand_003": 0,
+        "cand_004": 0
+      }
+    },
+    {
+      "id": "job_008",
+      "company_id": "co_003",
+      "title": "DevOps Engineer",
+      "location": "Chennai, India",
+      "mode": "remote",
+      "employment_type": "full-time",
+      "salary_range": {
+        "currency": "INR",
+        "min": 2100000,
+        "max": 3000000,
+        "period": "annual"
+      },
+      "description": "Fictional devops engineer role responsible for delivering reliable, measurable product outcomes in a collaborative engineering environment.",
+      "responsibilities": [
+        "Own core devops engineer deliverables.",
+        "Collaborate cross-functionally.",
+        "Document decisions and outcomes.",
+        "Improve quality through measurable feedback loops."
+      ],
+      "required_skills": [
+        "AWS",
+        "Docker",
+        "CI/CD",
+        "Linux"
+      ],
+      "preferred_skills": [
+        "Kubernetes",
+        "Terraform"
+      ],
+      "experience_level": "mid",
+      "benefits": [
+        "Health allowance",
+        "Learning budget",
+        "Flexible leave",
+        "Equipment support"
+      ],
+      "application_url": "https://jobs.cedarpeak.example.invalid/job_008",
+      "external_application_url": null,
+      "status": "paused",
+      "created_date": "2026-02-11",
+      "closing_date": "2026-09-30",
+      "source": "ATS Engine synthetic seed",
+      "incomplete_optional_data": false,
+      "match_scores_by_candidate": {
+        "cand_001": 50,
+        "cand_002": 0,
+        "cand_003": 0,
+        "cand_004": 0
+      }
+    },
+    {
+      "id": "job_009",
+      "company_id": "co_002",
+      "title": "QA Engineer",
+      "location": "Bengaluru, India",
+      "mode": "onsite",
+      "employment_type": "full-time",
+      "salary_range": {
+        "currency": "INR",
+        "min": 900000,
+        "max": 1400000,
+        "period": "annual"
+      },
+      "description": "Fictional qa engineer role responsible for delivering reliable, measurable product outcomes in a collaborative engineering environment.",
+      "responsibilities": [
+        "Own core qa engineer deliverables.",
+        "Collaborate cross-functionally.",
+        "Document decisions and outcomes.",
+        "Improve quality through measurable feedback loops."
+      ],
+      "required_skills": [
+        "Testing",
+        "API Testing",
+        "Automation"
+      ],
+      "preferred_skills": [
+        "Playwright"
+      ],
+      "experience_level": "junior",
+      "benefits": [
+        "Health allowance",
+        "Learning budget",
+        "Flexible leave",
+        "Equipment support"
+      ],
+      "application_url": "https://jobs.blueorbit.example.invalid/job_009",
+      "external_application_url": null,
+      "status": "draft",
+      "created_date": null,
+      "closing_date": null,
+      "source": "ATS Engine synthetic seed",
+      "incomplete_optional_data": true,
+      "match_scores_by_candidate": {
+        "cand_001": 33,
+        "cand_002": 0,
+        "cand_003": 0,
+        "cand_004": 0
+      }
+    },
+    {
+      "id": "job_010",
+      "company_id": "co_003",
+      "title": "Security Engineer",
+      "location": "Chennai, India",
+      "mode": "hybrid",
+      "employment_type": "full-time",
+      "salary_range": {
+        "currency": "INR",
+        "min": 2300000,
+        "max": 3400000,
+        "period": "annual"
+      },
+      "description": "Fictional security engineer role responsible for delivering reliable, measurable product outcomes in a collaborative engineering environment.",
+      "responsibilities": [
+        "Own core security engineer deliverables.",
+        "Collaborate cross-functionally.",
+        "Document decisions and outcomes.",
+        "Improve quality through measurable feedback loops."
+      ],
+      "required_skills": [
+        "Application Security",
+        "Threat Modeling",
+        "Python"
+      ],
+      "preferred_skills": [
+        "Cloud Security",
+        "SAST"
+      ],
+      "experience_level": "senior",
+      "benefits": [
+        "Health allowance",
+        "Learning budget",
+        "Flexible leave",
+        "Equipment support"
+      ],
+      "application_url": "https://jobs.cedarpeak.example.invalid/job_010",
+      "external_application_url": "https://apply.external.example.invalid/job_010",
+      "status": "published",
+      "created_date": "2026-02-13",
+      "closing_date": "2026-12-01",
+      "source": "ATS Engine synthetic seed",
+      "incomplete_optional_data": false,
+      "match_scores_by_candidate": {
+        "cand_001": 22,
+        "cand_002": 0,
+        "cand_003": 33,
+        "cand_004": 0
+      }
+    },
+    {
+      "id": "job_011",
+      "company_id": "co_002",
+      "title": "Mobile Engineer",
+      "location": "Bengaluru, India",
+      "mode": "remote",
+      "employment_type": "contract",
+      "salary_range": {
+        "currency": "INR",
+        "min": 1400000,
+        "max": 2000000,
+        "period": "annual"
+      },
+      "description": "Fictional mobile engineer role responsible for delivering reliable, measurable product outcomes in a collaborative engineering environment.",
+      "responsibilities": [
+        "Own core mobile engineer deliverables.",
+        "Collaborate cross-functionally.",
+        "Document decisions and outcomes.",
+        "Improve quality through measurable feedback loops."
+      ],
+      "required_skills": [
+        "React Native",
+        "TypeScript",
+        "Mobile Testing"
+      ],
+      "preferred_skills": [
+        "Expo",
+        "CI/CD"
+      ],
+      "experience_level": "mid",
+      "benefits": [
+        "Health allowance",
+        "Learning budget",
+        "Flexible leave",
+        "Equipment support"
+      ],
+      "application_url": "https://jobs.blueorbit.example.invalid/job_011",
+      "external_application_url": null,
+      "status": "closed",
+      "created_date": "2026-01-10",
+      "closing_date": "2026-04-30",
+      "source": "ATS Engine synthetic seed",
+      "incomplete_optional_data": false,
+      "match_scores_by_candidate": {
+        "cand_001": 33,
+        "cand_002": 0,
+        "cand_003": 0,
+        "cand_004": 0
+      }
+    },
+    {
+      "id": "job_012",
+      "company_id": "co_001",
+      "title": "Technical Writer",
+      "location": "Pune, India",
+      "mode": "hybrid",
+      "employment_type": "full-time",
+      "salary_range": null,
+      "description": "Fictional technical writer role responsible for delivering reliable, measurable product outcomes in a collaborative engineering environment.",
+      "responsibilities": [
+        "Own core technical writer deliverables.",
+        "Collaborate cross-functionally.",
+        "Document decisions and outcomes.",
+        "Improve quality through measurable feedback loops."
+      ],
+      "required_skills": [
+        "Technical Writing",
+        "API Documentation",
+        "Markdown"
+      ],
+      "preferred_skills": [
+        "Developer Experience",
+        "Docs-as-Code"
+      ],
+      "experience_level": "mid",
+      "benefits": [
+        "Health allowance",
+        "Learning budget",
+        "Flexible leave",
+        "Equipment support"
+      ],
+      "application_url": "https://jobs.northstar.example.invalid/job_012",
+      "external_application_url": null,
+      "status": "published",
+      "created_date": "2026-02-15",
+      "closing_date": "2026-12-15",
+      "source": "ATS Engine synthetic seed",
+      "incomplete_optional_data": true,
+      "match_scores_by_candidate": {
+        "cand_001": 0,
+        "cand_002": 0,
+        "cand_003": 0,
+        "cand_004": 0
+      },
+      "applicant_count": 0,
+      "edge_case": "no_applicants_and_no_salary"
+    }
+  ],
+  "8. Applications": [
+    {
+      "id": "app_001",
+      "candidate_id": "cand_001",
+      "job_id": "job_003",
+      "applied_date": "2026-05-25T09:00:00Z",
+      "current_status": "Interview",
+      "previous_statuses": [
+        "Saved",
+        "Applied",
+        "Screening"
+      ],
+      "notes": "Strong technical alignment; portfolio reviewed.",
+      "recruiter_notes": "Move to architecture interview.",
+      "candidate_notes": "Review system design notes.",
+      "match_score": 98,
+      "resume_used_id": "resume_001",
+      "cover_letter_used_id": "cl_001",
+      "next_action": "Architecture interview",
+      "next_action_date": "2026-08-23T09:00:00Z",
+      "rejection_reason": null,
+      "external_application_tracking": null
+    },
+    {
+      "id": "app_002",
+      "candidate_id": "cand_001",
+      "job_id": "job_002",
+      "applied_date": "2026-05-15T09:00:00Z",
+      "current_status": "Assessment",
+      "previous_statuses": [
+        "Saved",
+        "Applied",
+        "Screening"
+      ],
+      "notes": "Awaiting coding assessment.",
+      "recruiter_notes": "Assessment link sent.",
+      "candidate_notes": "Complete by due date.",
+      "match_score": 86,
+      "resume_used_id": "resume_001",
+      "cover_letter_used_id": "cl_002",
+      "next_action": "Complete coding challenge",
+      "next_action_date": "2026-08-17T09:00:00Z",
+      "rejection_reason": null,
+      "external_application_tracking": null
+    },
+    {
+      "id": "app_003",
+      "candidate_id": "cand_001",
+      "job_id": "job_007",
+      "applied_date": "2026-05-10T09:00:00Z",
+      "current_status": "Rejected",
+      "previous_statuses": [
+        "Saved",
+        "Applied",
+        "Screening"
+      ],
+      "notes": "Role is senior product management; skills overlap is insufficient.",
+      "recruiter_notes": "Experience did not meet product ownership requirement.",
+      "candidate_notes": "Consider PM-adjacent roles later.",
+      "match_score": 31,
+      "resume_used_id": "resume_001",
+      "cover_letter_used_id": "cl_003",
+      "next_action": null,
+      "next_action_date": null,
+      "rejection_reason": "Experience mismatch",
+      "external_application_tracking": null
+    },
+    {
+      "id": "app_004",
+      "candidate_id": "cand_002",
+      "job_id": "job_004",
+      "applied_date": "2026-04-30T09:00:00Z",
+      "current_status": "Offer",
+      "previous_statuses": [
+        "Saved",
+        "Applied",
+        "Screening",
+        "Interview"
+      ],
+      "notes": "Strong design-system portfolio.",
+      "recruiter_notes": "Prepare compensation package.",
+      "candidate_notes": "Review offer terms.",
+      "match_score": 92,
+      "resume_used_id": "resume_002",
+      "cover_letter_used_id": "cl_004",
+      "next_action": "Review offer",
+      "next_action_date": "2026-08-29T09:00:00Z",
+      "rejection_reason": null,
+      "external_application_tracking": null
+    },
+    {
+      "id": "app_005",
+      "candidate_id": "cand_002",
+      "job_id": "job_011",
+      "applied_date": "2026-06-24T09:00:00Z",
+      "current_status": "Withdrawn",
+      "previous_statuses": [
+        "Saved",
+        "Applied"
+      ],
+      "notes": "Candidate withdrew after accepting another direction.",
+      "recruiter_notes": "No action required.",
+      "candidate_notes": "Withdrew voluntarily.",
+      "match_score": 46,
+      "resume_used_id": "resume_002",
+      "cover_letter_used_id": null,
+      "next_action": null,
+      "next_action_date": null,
+      "rejection_reason": null,
+      "external_application_tracking": null
+    },
+    {
+      "id": "app_006",
+      "candidate_id": "cand_003",
+      "job_id": "job_005",
+      "applied_date": "2026-04-15T09:00:00Z",
+      "current_status": "Hired",
+      "previous_statuses": [
+        "Saved",
+        "Applied",
+        "Screening",
+        "Interview",
+        "Assessment",
+        "Offer"
+      ],
+      "notes": "Successful end-to-end process.",
+      "recruiter_notes": "Accepted offer and start date confirmed.",
+      "candidate_notes": "Ready to start.",
+      "match_score": 96,
+      "resume_used_id": "resume_003",
+      "cover_letter_used_id": "cl_005",
+      "next_action": "Preboarding",
+      "next_action_date": "2026-09-07T09:00:00Z",
+      "rejection_reason": null,
+      "external_application_tracking": null
+    },
+    {
+      "id": "app_007",
+      "candidate_id": "cand_003",
+      "job_id": "job_006",
+      "applied_date": "2026-04-10T09:00:00Z",
+      "current_status": "Screening",
+      "previous_statuses": [
+        "Saved",
+        "Applied"
+      ],
+      "notes": "Screening call pending.",
+      "recruiter_notes": "Review portfolio project 007.",
+      "candidate_notes": "Prepare ML fundamentals.",
+      "match_score": 67,
+      "resume_used_id": "resume_003",
+      "cover_letter_used_id": "cl_006",
+      "next_action": "Recruiter screen",
+      "next_action_date": "2026-08-19T09:00:00Z",
+      "rejection_reason": null,
+      "external_application_tracking": null
+    },
+    {
+      "id": "app_008",
+      "candidate_id": "cand_001",
+      "job_id": "job_001",
+      "applied_date": "2026-03-26T09:00:00Z",
+      "current_status": "Saved",
+      "previous_statuses": [],
+      "notes": "Saved for later comparison.",
+      "recruiter_notes": null,
+      "candidate_notes": "Revisit after current interviews.",
+      "match_score": 90,
+      "resume_used_id": "resume_001",
+      "cover_letter_used_id": null,
+      "next_action": "Decide whether to apply",
+      "next_action_date": "2026-09-02T09:00:00Z",
+      "rejection_reason": null,
+      "external_application_tracking": null
+    },
+    {
+      "id": "app_009",
+      "candidate_id": "cand_002",
+      "job_id": "job_007",
+      "applied_date": "2026-03-21T09:00:00Z",
+      "current_status": "Applied",
+      "previous_statuses": [
+        "Saved"
+      ],
+      "notes": "Application submitted.",
+      "recruiter_notes": null,
+      "candidate_notes": "Await recruiter response.",
+      "match_score": 29,
+      "resume_used_id": "resume_002",
+      "cover_letter_used_id": null,
+      "next_action": "Await recruiter",
+      "next_action_date": "2026-08-21T09:00:00Z",
+      "rejection_reason": null,
+      "external_application_tracking": null
+    },
+    {
+      "id": "app_010",
+      "candidate_id": "cand_003",
+      "job_id": "job_002",
+      "applied_date": "2026-03-11T09:00:00Z",
+      "current_status": "Rejected",
+      "previous_statuses": [
+        "Saved",
+        "Applied",
+        "Screening"
+      ],
+      "notes": "Rejected after screen.",
+      "recruiter_notes": "Insufficient backend experience.",
+      "candidate_notes": "Build API project evidence.",
+      "match_score": 44,
+      "resume_used_id": "resume_003",
+      "cover_letter_used_id": null,
+      "next_action": null,
+      "next_action_date": null,
+      "rejection_reason": "Insufficient backend experience",
+      "external_application_tracking": null
+    },
+    {
+      "id": "app_011",
+      "candidate_id": "cand_001",
+      "job_id": "job_010",
+      "applied_date": "2026-03-01T09:00:00Z",
+      "current_status": "Rejected",
+      "previous_statuses": [
+        "Saved",
+        "Applied"
+      ],
+      "notes": "Security role match too low.",
+      "recruiter_notes": "Experience did not meet AppSec depth.",
+      "candidate_notes": "Upskill security fundamentals.",
+      "match_score": 22,
+      "resume_used_id": "resume_001",
+      "cover_letter_used_id": null,
+      "next_action": null,
+      "next_action_date": null,
+      "rejection_reason": "Skills mismatch",
+      "external_application_tracking": null
+    },
+    {
+      "id": "app_012",
+      "candidate_id": "cand_001",
+      "job_id": "job_010",
+      "applied_date": "2026-02-19T09:00:00Z",
+      "current_status": "Applied",
+      "previous_statuses": [
+        "Saved"
+      ],
+      "notes": "Duplicate-looking test record with distinct ID and timestamp.",
+      "recruiter_notes": null,
+      "candidate_notes": "External application test.",
+      "match_score": 22,
+      "resume_used_id": "resume_001",
+      "cover_letter_used_id": null,
+      "next_action": "Check external result",
+      "next_action_date": "2026-08-18T09:00:00Z",
+      "rejection_reason": null,
+      "external_application_tracking": {
+        "submission_status": "failed",
+        "provider": "fictional_external_ats",
+        "external_reference": "EXT-TEST-00012",
+        "failure_code": "UPSTREAM_TIMEOUT"
+      }
+    },
+    {
+      "id": "app_013",
+      "candidate_id": "cand_004",
+      "job_id": "job_003",
+      "applied_date": "2026-02-24T09:00:00Z",
+      "current_status": "Withdrawn",
+      "previous_statuses": [
+        "Saved",
+        "Applied"
+      ],
+      "notes": "Edge-case empty-profile application record.",
+      "recruiter_notes": null,
+      "candidate_notes": "No completed profile.",
+      "match_score": 0,
+      "resume_used_id": null,
+      "cover_letter_used_id": null,
+      "next_action": null,
+      "next_action_date": null,
+      "rejection_reason": null,
+      "external_application_tracking": null
+    },
+    {
+      "id": "app_014",
+      "candidate_id": "cand_003",
+      "job_id": "job_005",
+      "applied_date": "2026-01-25T09:00:00Z",
+      "current_status": "Offer",
+      "previous_statuses": [
+        "Saved",
+        "Applied",
+        "Screening",
+        "Interview",
+        "Assessment"
+      ],
+      "notes": "Awaiting candidate response in an alternate offer test branch.",
+      "recruiter_notes": "Candidate action required.",
+      "candidate_notes": "Review salary and start date.",
+      "match_score": 96,
+      "resume_used_id": "resume_003",
+      "cover_letter_used_id": "cl_005",
+      "next_action": "Candidate to respond",
+      "next_action_date": "2026-08-31T09:00:00Z",
+      "rejection_reason": null,
+      "external_application_tracking": null
+    },
+    {
+      "id": "app_015",
+      "candidate_id": "cand_002",
+      "job_id": "job_004",
+      "applied_date": "2026-01-23T09:00:00Z",
+      "current_status": "Screening",
+      "previous_statuses": [
+        "Saved",
+        "Applied"
+      ],
+      "notes": "Awaiting recruiter action.",
+      "recruiter_notes": "Needs screening assignment.",
+      "candidate_notes": "Prepare portfolio walkthrough.",
+      "match_score": 92,
+      "resume_used_id": "resume_002",
+      "cover_letter_used_id": "cl_004",
+      "next_action": "Recruiter to schedule screen",
+      "next_action_date": "2026-08-20T09:00:00Z",
+      "rejection_reason": null,
+      "external_application_tracking": null
+    },
+    {
+      "id": "app_016",
+      "candidate_id": "cand_001",
+      "job_id": "job_005",
+      "applied_date": "2026-01-15T09:00:00Z",
+      "current_status": "Assessment",
+      "previous_statuses": [
+        "Saved",
+        "Applied",
+        "Screening"
+      ],
+      "notes": "Assessment sent.",
+      "recruiter_notes": "Waiting on candidate.",
+      "candidate_notes": "Complete assessment.",
+      "match_score": 78,
+      "resume_used_id": "resume_001",
+      "cover_letter_used_id": null,
+      "next_action": "Candidate action",
+      "next_action_date": "2026-08-14T09:00:00Z",
+      "rejection_reason": null,
+      "external_application_tracking": null
+    }
+  ],
+  "9. Cover letters": [
+    {
+      "id": "cl_001",
+      "candidate_id": "cand_001",
+      "job_id": "job_003",
+      "hiring_manager_name": "Priya Nair",
+      "company_name": "Northstar Works",
+      "job_title": "Full-stack Engineer",
+      "job_description": "Build workflow products spanning modern frontend and backend systems.",
+      "candidate_highlights": [
+        "6 years experience",
+        "34% API latency reduction",
+        "React + Python"
+      ],
+      "tone": "professional",
+      "length": "medium",
+      "generated_content": "Dear Priya,\nI am excited to apply for the Full-stack Engineer role at Northstar Works. My experience across React, Python, PostgreSQL, and measurable performance improvements aligns closely with the role. I would bring a product-focused engineering approach and a track record of improving reliability and usability.\nSincerely,\nAlex Rivera",
+      "draft_status": "final",
+      "final_status": "final",
+      "created_date": "2026-05-23T09:00:00Z",
+      "updated_date": "2026-05-24T09:00:00Z"
+    },
+    {
+      "id": "cl_002",
+      "candidate_id": "cand_001",
+      "job_id": "job_002",
+      "hiring_manager_name": "Rohan Mehta",
+      "company_name": "CedarPeak Systems",
+      "job_title": "Backend Engineer",
+      "job_description": "Develop resilient Python services and PostgreSQL APIs.",
+      "candidate_highlights": [
+        "FastAPI",
+        "PostgreSQL",
+        "API testing"
+      ],
+      "tone": "confident",
+      "length": "short",
+      "generated_content": "I am excited to apply for the Backend Engineer role. I bring hands-on FastAPI, PostgreSQL, testing, and performance optimization experience.",
+      "draft_status": "draft",
+      "final_status": "not_final",
+      "created_date": "2026-05-17T09:00:00Z",
+      "updated_date": "2026-05-18T09:00:00Z"
+    },
+    {
+      "id": "cl_003",
+      "candidate_id": "cand_001",
+      "job_id": "job_007",
+      "hiring_manager_name": "",
+      "company_name": "Northstar Works",
+      "job_title": "Product Manager",
+      "job_description": "",
+      "candidate_highlights": [
+        "Analytics",
+        "Cross-functional collaboration"
+      ],
+      "tone": "warm",
+      "length": "short",
+      "generated_content": "[Missing hiring manager and job-description details; generated draft is intentionally incomplete for edge-case testing.]",
+      "draft_status": "draft",
+      "final_status": "blocked_missing_details",
+      "created_date": "2026-05-09T09:00:00Z",
+      "updated_date": "2026-05-09T09:00:00Z"
+    },
+    {
+      "id": "cl_004",
+      "candidate_id": "cand_002",
+      "job_id": "job_004",
+      "hiring_manager_name": "Elena Park",
+      "company_name": "BlueOrbit Labs",
+      "job_title": "Product Designer",
+      "job_description": "Create accessible design patterns for analytics products.",
+      "candidate_highlights": [
+        "Design systems",
+        "Accessibility",
+        "Usability research"
+      ],
+      "tone": "warm",
+      "length": "medium",
+      "generated_content": "Dear Elena,\nBlueOrbit Labs' focus on analytics products and reusable design patterns is especially compelling to me. I have built design-system patterns, run usability studies, and prioritized accessible experiences. I would be excited to bring that craft to your product team.\nBest,\nMaya Chen",
+      "draft_status": "final",
+      "final_status": "final",
+      "created_date": "2026-05-01T09:00:00Z",
+      "updated_date": "2026-05-02T09:00:00Z"
+    },
+    {
+      "id": "cl_005",
+      "candidate_id": "cand_003",
+      "job_id": "job_005",
+      "hiring_manager_name": "Elena Park",
+      "company_name": "BlueOrbit Labs",
+      "job_title": "Data Analyst",
+      "job_description": "Translate operational data into reliable KPIs and dashboards.",
+      "candidate_highlights": [
+        "SQL",
+        "Python",
+        "Power BI",
+        "KPI standardization"
+      ],
+      "tone": "professional",
+      "length": "long",
+      "generated_content": "Dear Elena,\nI am applying for the Data Analyst role because I enjoy turning operational data into clear decisions. My experience with SQL, Python, Power BI, and KPI standardization would help me contribute quickly while continuing to deepen analytical engineering skills.\nBest regards,\nSamira Okafor",
+      "draft_status": "final",
+      "final_status": "final",
+      "created_date": "2026-04-16T09:00:00Z",
+      "updated_date": "2026-04-17T09:00:00Z"
+    },
+    {
+      "id": "cl_006",
+      "candidate_id": "cand_003",
+      "job_id": "job_006",
+      "hiring_manager_name": "Rohan Mehta",
+      "company_name": "CedarPeak Systems",
+      "job_title": "Data Scientist",
+      "job_description": "Build practical machine-learning workflows and experiments.",
+      "candidate_highlights": [
+        "Python",
+        "Churn classification project",
+        "SQL"
+      ],
+      "tone": "concise",
+      "length": "medium",
+      "generated_content": "Dear Rohan,\nMy analytical background and hands-on machine-learning project work make the Data Scientist role a strong next step. I am especially interested in applying Python and SQL to measurable experimentation and production-oriented workflows.\nSamira Okafor",
+      "draft_status": "draft",
+      "final_status": "not_final",
+      "created_date": "2026-04-11T09:00:00Z",
+      "updated_date": "2026-04-11T09:00:00Z"
+    }
+  ],
+  "10. Training sessions": [
+    {
+      "id": "train_001",
+      "candidate_id": "cand_001",
+      "job_id": "job_003",
+      "target_role": "Full-stack Engineer",
+      "target_company": "Northstar Works",
+      "progress_percentage": 100,
+      "current_step": "Final report",
+      "created_date": "2026-04-05T09:00:00Z",
+      "updated_date": "2026-06-04T09:00:00Z",
+      "status": "Completed"
+    },
+    {
+      "id": "train_002",
+      "candidate_id": "cand_002",
+      "job_id": "job_004",
+      "target_role": "Product Designer",
+      "target_company": "BlueOrbit Labs",
+      "progress_percentage": 57,
+      "current_step": "Spoken interview answers",
+      "created_date": "2026-03-31T09:00:00Z",
+      "updated_date": "2026-04-25T09:00:00Z",
+      "status": "In progress"
+    },
+    {
+      "id": "train_003",
+      "candidate_id": "cand_003",
+      "job_id": "job_005",
+      "target_role": "Data Analyst",
+      "target_company": "BlueOrbit Labs",
+      "progress_percentage": 20,
+      "current_step": "Resume tailoring",
+      "created_date": "2026-03-16T09:00:00Z",
+      "updated_date": "2026-03-18T09:00:00Z",
+      "status": "Not started"
+    },
+    {
+      "id": "train_004",
+      "candidate_id": "cand_001",
+      "job_id": "job_002",
+      "target_role": "Backend Engineer",
+      "target_company": "CedarPeak Systems",
+      "progress_percentage": 71,
+      "current_step": "Coding challenge",
+      "created_date": "2026-03-11T09:00:00Z",
+      "updated_date": "2026-04-05T09:00:00Z",
+      "status": "In progress"
+    },
+    {
+      "id": "train_005",
+      "candidate_id": "cand_003",
+      "job_id": "job_006",
+      "target_role": "Data Scientist",
+      "target_company": "CedarPeak Systems",
+      "progress_percentage": 0,
+      "current_step": "Resume tailoring",
+      "created_date": "2026-02-14T09:00:00Z",
+      "updated_date": "2026-02-14T09:00:00Z",
+      "status": "Skipped"
+    },
+    {
+      "id": "train_006",
+      "candidate_id": "cand_004",
+      "job_id": "job_003",
+      "target_role": "Full-stack Engineer",
+      "target_company": "Northstar Works",
+      "progress_percentage": 0,
+      "current_step": "Resume tailoring",
+      "created_date": "2026-02-04T09:00:00Z",
+      "updated_date": "2026-02-04T09:00:00Z",
+      "status": "Failed",
+      "failure_message": "Cannot start training without a candidate profile or resume."
+    },
+    {
+      "id": "train_007",
+      "candidate_id": "cand_001",
+      "job_id": "job_010",
+      "target_role": "Security Engineer",
+      "target_company": "CedarPeak Systems",
+      "progress_percentage": 38,
+      "current_step": "Interview questions",
+      "created_date": "2026-01-30T09:00:00Z",
+      "updated_date": "2026-02-03T09:00:00Z",
+      "status": "Failed",
+      "failure_message": "External security-question source unavailable in synthetic failure mode."
+    }
+  ],
+  "training_steps": [
+    {
+      "id": "tstep_001",
+      "session_id": "train_001",
+      "step_number": 1,
+      "step_type": "Resume tailoring",
+      "status": "completed"
+    },
+    {
+      "id": "tstep_002",
+      "session_id": "train_001",
+      "step_number": 2,
+      "step_type": "Cover-letter generation",
+      "status": "completed"
+    },
+    {
+      "id": "tstep_003",
+      "session_id": "train_001",
+      "step_number": 3,
+      "step_type": "Portfolio selection",
+      "status": "completed"
+    },
+    {
+      "id": "tstep_004",
+      "session_id": "train_001",
+      "step_number": 4,
+      "step_type": "Interview questions",
+      "status": "completed"
+    },
+    {
+      "id": "tstep_005",
+      "session_id": "train_001",
+      "step_number": 5,
+      "step_type": "Spoken interview answers",
+      "status": "completed"
+    },
+    {
+      "id": "tstep_006",
+      "session_id": "train_001",
+      "step_number": 6,
+      "step_type": "Coding challenge",
+      "status": "completed"
+    },
+    {
+      "id": "tstep_007",
+      "session_id": "train_001",
+      "step_number": 7,
+      "step_type": "Final report",
+      "status": "completed"
+    },
+    {
+      "id": "tstep_008",
+      "session_id": "train_002",
+      "step_number": 1,
+      "step_type": "Resume tailoring",
+      "status": "completed"
+    },
+    {
+      "id": "tstep_009",
+      "session_id": "train_002",
+      "step_number": 2,
+      "step_type": "Cover-letter generation",
+      "status": "completed"
+    },
+    {
+      "id": "tstep_010",
+      "session_id": "train_002",
+      "step_number": 3,
+      "step_type": "Portfolio selection",
+      "status": "completed"
+    },
+    {
+      "id": "tstep_011",
+      "session_id": "train_002",
+      "step_number": 4,
+      "step_type": "Interview questions",
+      "status": "completed"
+    },
+    {
+      "id": "tstep_012",
+      "session_id": "train_002",
+      "step_number": 5,
+      "step_type": "Spoken interview answers",
+      "status": "in_progress"
+    },
+    {
+      "id": "tstep_013",
+      "session_id": "train_002",
+      "step_number": 6,
+      "step_type": "Coding challenge",
+      "status": "not_started"
+    },
+    {
+      "id": "tstep_014",
+      "session_id": "train_002",
+      "step_number": 7,
+      "step_type": "Final report",
+      "status": "not_started"
+    }
+  ],
+  "11. Interview questions": [
+    {
+      "id": "iq_001",
+      "question": "Describe a difficult API performance issue you solved.",
+      "round": "Technical Screen",
+      "topic": "Backend",
+      "why_asked": "Tests diagnosis and optimization discipline.",
+      "difficulty": "Hard",
+      "expected_answer_themes": [
+        "Measurement before change",
+        "Bottleneck isolation",
+        "Validation"
+      ],
+      "source_context": "Synthetic ATS Engine interview bank"
+    },
+    {
+      "id": "iq_002",
+      "question": "How do you decide when to abstract a React component?",
+      "round": "Technical Screen",
+      "topic": "Frontend",
+      "why_asked": "Tests maintainability judgment.",
+      "difficulty": "Medium",
+      "expected_answer_themes": [
+        "Duplication",
+        "Cohesion",
+        "API clarity"
+      ],
+      "source_context": "Synthetic ATS Engine interview bank"
+    },
+    {
+      "id": "iq_003",
+      "question": "Walk through a dashboard you designed from raw metrics to stakeholder use.",
+      "round": "Portfolio Review",
+      "topic": "Data Visualization",
+      "why_asked": "Tests end-to-end analytical thinking.",
+      "difficulty": "Medium",
+      "expected_answer_themes": [
+        "Metric definition",
+        "User context",
+        "Validation"
+      ],
+      "source_context": "Synthetic ATS Engine interview bank"
+    },
+    {
+      "id": "iq_004",
+      "question": "Tell me about a time you disagreed with a product requirement.",
+      "round": "Behavioral",
+      "topic": "Collaboration",
+      "why_asked": "Tests communication and trade-off reasoning.",
+      "difficulty": "Medium",
+      "expected_answer_themes": [
+        "Evidence",
+        "Alternatives",
+        "Outcome"
+      ],
+      "source_context": "Synthetic ATS Engine interview bank"
+    },
+    {
+      "id": "iq_005",
+      "question": "How would you design a resilient file-upload service?",
+      "round": "System Design",
+      "topic": "Architecture",
+      "why_asked": "Tests reliability and security thinking.",
+      "difficulty": "Hard",
+      "expected_answer_themes": [
+        "Validation",
+        "Storage isolation",
+        "Retries",
+        "Observability"
+      ],
+      "source_context": "Synthetic ATS Engine interview bank"
+    },
+    {
+      "id": "iq_006",
+      "question": "Explain precision versus recall with a hiring example.",
+      "round": "Technical Screen",
+      "topic": "Machine Learning",
+      "why_asked": "Tests applied ML reasoning.",
+      "difficulty": "Medium",
+      "expected_answer_themes": [
+        "False positives",
+        "False negatives",
+        "Trade-offs"
+      ],
+      "source_context": "Synthetic ATS Engine interview bank"
+    },
+    {
+      "id": "iq_007",
+      "question": "How do you test an external API integration?",
+      "round": "Technical Screen",
+      "topic": "Testing",
+      "why_asked": "Tests defensive engineering.",
+      "difficulty": "Easy",
+      "expected_answer_themes": [
+        "Contract tests",
+        "Mocking",
+        "Retries",
+        "Failure modes"
+      ],
+      "source_context": "Synthetic ATS Engine interview bank"
+    },
+    {
+      "id": "iq_008",
+      "question": "Describe a design-system decision that improved consistency.",
+      "round": "Portfolio Review",
+      "topic": "Design Systems",
+      "why_asked": "Tests design-system impact.",
+      "difficulty": "Medium",
+      "expected_answer_themes": [
+        "Tokens",
+        "Components",
+        "Adoption",
+        "Accessibility"
+      ],
+      "source_context": "Synthetic ATS Engine interview bank"
+    },
+    {
+      "id": "iq_009",
+      "question": "What would you monitor after deploying a new service?",
+      "round": "System Design",
+      "topic": "Observability",
+      "why_asked": "Tests production readiness.",
+      "difficulty": "Medium",
+      "expected_answer_themes": [
+        "Latency",
+        "Errors",
+        "Saturation",
+        "Business signals"
+      ],
+      "source_context": "Synthetic ATS Engine interview bank"
+    },
+    {
+      "id": "iq_010",
+      "question": "Give an example of mentoring or unblocking a teammate.",
+      "round": "Behavioral",
+      "topic": "Leadership",
+      "why_asked": "Tests collaborative maturity.",
+      "difficulty": "Easy",
+      "expected_answer_themes": [
+        "Context",
+        "Action",
+        "Outcome",
+        "Learning"
+      ],
+      "source_context": "Synthetic ATS Engine interview bank"
+    }
+  ],
+  "12. Interview answers": [
+    {
+      "id": "ia_001",
+      "question_id": "iq_001",
+      "candidate_id": "cand_001",
+      "transcript": "I first measured the endpoint by route and percentile, traced the slow query, and compared plans before changing anything. The final fix combined indexing with a cache on a stable lookup path. After deployment, p95 latency fell by roughly one third and error rates stayed flat.",
+      "duration_seconds": 82,
+      "word_count": 74,
+      "words_per_minute": 54.1,
+      "filler_word_count": 2,
+      "score": 94,
+      "feedback": "Excellent structure and quantified outcome.",
+      "strengths": [
+        "Measurement",
+        "Root-cause reasoning",
+        "Quantified impact"
+      ],
+      "improvements": [
+        "Mention rollback criteria"
+      ],
+      "submission_timestamp": "2026-06-05T11:00:00Z"
+    },
+    {
+      "id": "ia_002",
+      "question_id": "iq_004",
+      "candidate_id": "cand_002",
+      "transcript": "I try to understand why the requirement exists first. In one project I disagreed with a flow that added friction. I presented usability evidence, suggested a smaller experiment, and the team changed the flow after seeing the results.",
+      "duration_seconds": 69,
+      "word_count": 66,
+      "words_per_minute": 57.4,
+      "filler_word_count": 3,
+      "score": 82,
+      "feedback": "Good collaboration example; stronger metrics would improve it.",
+      "strengths": [
+        "Empathy",
+        "Evidence",
+        "Compromise"
+      ],
+      "improvements": [
+        "Quantify the user impact"
+      ],
+      "submission_timestamp": "2026-05-05T10:00:00Z"
+    },
+    {
+      "id": "ia_003",
+      "question_id": "iq_006",
+      "candidate_id": "cand_003",
+      "transcript": "Precision is how many predicted positives are correct. Recall is how many actual positives we captured. In hiring, high recall might find more suitable candidates but can increase review workload, while high precision reduces false positives but can miss good candidates.",
+      "duration_seconds": 61,
+      "word_count": 55,
+      "words_per_minute": 54.1,
+      "filler_word_count": 1,
+      "score": 78,
+      "feedback": "Accurate but could connect more directly to threshold selection.",
+      "strengths": [
+        "Correct definitions",
+        "Applied example"
+      ],
+      "improvements": [
+        "Explain threshold trade-off"
+      ],
+      "submission_timestamp": "2026-05-01T11:00:00Z"
+    },
+    {
+      "id": "ia_004",
+      "question_id": "iq_002",
+      "candidate_id": "cand_001",
+      "transcript": "Um, I usually, like, start with reusable things, and you know, if there are multiple screens, then I kind of make a component, uh, if it helps.",
+      "duration_seconds": 35,
+      "word_count": 35,
+      "words_per_minute": 60.0,
+      "filler_word_count": 8,
+      "score": 51,
+      "feedback": "Core idea is present, but delivery is hesitant and filler-heavy.",
+      "strengths": [
+        "Understands reuse"
+      ],
+      "improvements": [
+        "Reduce filler words",
+        "Give a concrete example",
+        "State a decision rule"
+      ],
+      "submission_timestamp": "2026-04-26T10:00:00Z"
+    },
+    {
+      "id": "ia_005",
+      "question_id": "iq_003",
+      "candidate_id": "cand_004",
+      "transcript": "",
+      "duration_seconds": 0,
+      "word_count": 0,
+      "words_per_minute": 0,
+      "filler_word_count": 0,
+      "score": 0,
+      "feedback": "No answer was submitted.",
+      "strengths": [],
+      "improvements": [
+        "Submit a response before the deadline"
+      ],
+      "submission_timestamp": "2026-04-20T12:00:00Z"
+    }
+  ],
+  "13. Coding challenges": [
+    {
+      "id": "cc_001",
+      "title": "Normalize Candidate Skills",
+      "difficulty": "Easy",
+      "prompt": "Return a case-insensitive, deduplicated sorted list of skill names.",
+      "function_signature": "normalize_skills(skills: list[str]) -> list[str]",
+      "starter_code": "def normalize_skills(skills):\n    pass",
+      "time_limit_seconds": 120,
+      "test_cases": [
+        {
+          "input": [
+            "React",
+            "react",
+            "Python"
+          ],
+          "expected_output": [
+            "python",
+            "react"
+          ]
+        },
+        {
+          "input": [
+            "SQL",
+            "sql",
+            "SQL"
+          ],
+          "expected_output": [
+            "sql"
+          ]
+        }
+      ],
+      "hidden_style_test_cases": [
+        {
+          "input": [
+            " Z ",
+            "z",
+            "A"
+          ],
+          "expected_output": [
+            "a",
+            "z"
+          ]
+        }
+      ],
+      "expected_output_description": "Sorted lowercase unique values"
+    },
+    {
+      "id": "cc_002",
+      "title": "Merge Availability Windows",
+      "difficulty": "Medium",
+      "prompt": "Merge overlapping integer availability windows represented as [start,end].",
+      "function_signature": "merge_windows(windows: list[list[int]]) -> list[list[int]]",
+      "starter_code": "def merge_windows(windows):\n    # return merged windows\n    pass",
+      "time_limit_seconds": 300,
+      "test_cases": [
+        {
+          "input": [
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              6,
+              8
+            ]
+          ],
+          "expected_output": [
+            [
+              1,
+              4
+            ],
+            [
+              6,
+              8
+            ]
+          ]
+        }
+      ],
+      "hidden_style_test_cases": [
+        {
+          "input": [
+            [
+              1,
+              10
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              9,
+              12
+            ]
+          ],
+          "expected_output": [
+            [
+              1,
+              12
+            ]
+          ]
+        }
+      ],
+      "expected_output_description": "Non-overlapping merged windows"
+    },
+    {
+      "id": "cc_003",
+      "title": "Top Matching Jobs",
+      "difficulty": "Medium",
+      "prompt": "Return the top k job IDs by match score, breaking ties by lower job ID.",
+      "function_signature": "top_jobs(scores: dict[str,int], k: int) -> list[str]",
+      "starter_code": "def top_jobs(scores, k):\n    pass",
+      "time_limit_seconds": 180,
+      "test_cases": [
+        {
+          "input": [
+            {
+              "job_1": 91,
+              "job_2": 87,
+              "job_3": 95
+            },
+            2
+          ],
+          "expected_output": [
+            "job_3",
+            "job_1"
+          ]
+        }
+      ],
+      "hidden_style_test_cases": [
+        {
+          "input": [
+            {
+              "job_2": 90,
+              "job_10": 90
+            },
+            1
+          ],
+          "expected_output": [
+            "job_10"
+          ]
+        }
+      ],
+      "expected_output_description": "Top-k deterministic ordering"
+    },
+    {
+      "id": "cc_004",
+      "title": "Validate Resume Sections",
+      "difficulty": "Hard",
+      "prompt": "Return missing required section names from a resume section list.",
+      "function_signature": "missing_sections(sections: list[str]) -> list[str]",
+      "starter_code": "def missing_sections(sections):\n    required = ['summary','experience','education','skills']\n    pass",
+      "time_limit_seconds": 90,
+      "test_cases": [
+        {
+          "input": [
+            [
+              "summary",
+              "skills"
+            ]
+          ],
+          "expected_output": [
+            "experience",
+            "education"
+          ]
+        }
+      ],
+      "hidden_style_test_cases": [
+        {
+          "input": [
+            []
+          ],
+          "expected_output": [
+            "summary",
+            "experience",
+            "education",
+            "skills"
+          ]
+        }
+      ],
+      "expected_output_description": "Missing required sections in canonical order"
+    },
+    {
+      "id": "cc_005",
+      "title": "External Submission Retry Budget",
+      "difficulty": "Medium",
+      "prompt": "Given attempt outcomes, return whether a submission may be retried under a 3-attempt budget.",
+      "function_signature": "can_retry(outcomes: list[str]) -> bool",
+      "starter_code": "def can_retry(outcomes):\n    pass",
+      "time_limit_seconds": 30,
+      "test_cases": [
+        {
+          "input": [
+            [
+              "timeout",
+              "success"
+            ]
+          ],
+          "expected_output": [
+            false
+          ]
+        }
+      ],
+      "hidden_style_test_cases": [
+        {
+          "input": [
+            [
+              "timeout",
+              "timeout"
+            ]
+          ],
+          "expected_output": [
+            true
+          ]
+        }
+      ],
+      "expected_output_description": "Retry allowed until 3 attempts or success"
+    }
+  ],
+  "14. Coding submissions": [
+    {
+      "id": "cs_001",
+      "challenge_id": "cc_001",
+      "candidate_id": "cand_001",
+      "candidate_submission": "def normalize_skills(skills):\n    return sorted(set(s.strip().lower() for s in skills))",
+      "verdict": "Passed",
+      "passed_test_count": 3,
+      "total_test_count": 3,
+      "feedback": "All tests pass.",
+      "complexity_review": "O(n log n) due to final sort.",
+      "timed_out": false,
+      "submitted_at": "2026-06-03T13:00:00Z"
+    },
+    {
+      "id": "cs_002",
+      "challenge_id": "cc_002",
+      "candidate_id": "cand_001",
+      "candidate_submission": "def merge_windows(windows):\n    return windows",
+      "verdict": "Partially Passed",
+      "passed_test_count": 1,
+      "total_test_count": 2,
+      "feedback": "Does not merge overlaps.",
+      "complexity_review": "O(n), but incorrect for overlapping cases.",
+      "timed_out": false,
+      "submitted_at": "2026-04-06T12:00:00Z"
+    },
+    {
+      "id": "cs_003",
+      "challenge_id": "cc_003",
+      "candidate_id": "cand_003",
+      "candidate_submission": "def top_jobs(scores,k):\n    return list(scores)[:k]",
+      "verdict": "Failed",
+      "passed_test_count": 0,
+      "total_test_count": 2,
+      "feedback": "Does not sort by score or tie-break deterministically.",
+      "complexity_review": "O(k) but incorrect behavior.",
+      "timed_out": false,
+      "submitted_at": "2026-03-16T14:00:00Z"
+    },
+    {
+      "id": "cs_004",
+      "challenge_id": "cc_004",
+      "candidate_id": "cand_002",
+      "candidate_submission": "# no submission before timer expired",
+      "verdict": "Timed Out",
+      "passed_test_count": 0,
+      "total_test_count": 2,
+      "feedback": "Execution exceeded time limit.",
+      "complexity_review": "Unavailable due to timeout.",
+      "timed_out": true,
+      "submitted_at": "2026-03-08T15:00:00Z"
+    },
+    {
+      "id": "cs_005",
+      "challenge_id": "cc_005",
+      "candidate_id": "cand_001",
+      "candidate_submission": "def can_retry(outcomes):\n    return 'success' not in outcomes and len(outcomes) < 3",
+      "verdict": "Passed",
+      "passed_test_count": 2,
+      "total_test_count": 2,
+      "feedback": "Passes visible and hidden-style tests.",
+      "complexity_review": "O(n) time, O(1) auxiliary state.",
+      "timed_out": false,
+      "submitted_at": "2026-02-28T11:00:00Z"
+    }
+  ],
+  "15. Pipeline records": [
+    {
+      "id": "pipe_001",
+      "employer_id": "emp_001",
+      "candidate_id": "cand_001",
+      "job_id": "job_003",
+      "stage": "Interview",
+      "candidate_notes": "Interested in platform reliability work.",
+      "internal_tags": [
+        "priority",
+        "strong-api"
+      ],
+      "last_contact_date": "2026-05-25T09:00:00Z",
+      "next_follow_up_date": "2026-08-23T09:00:00Z",
+      "assigned_recruiter_user_id": "usr_emp_001",
+      "stage_history": [
+        {
+          "stage": "New",
+          "at": "2026-05-25T09:00:00Z"
+        },
+        {
+          "stage": "Reviewed",
+          "at": "2026-05-27T09:00:00Z"
+        },
+        {
+          "stage": "Shortlisted",
+          "at": "2026-05-29T09:00:00Z"
+        },
+        {
+          "stage": "Interview",
+          "at": "2026-06-04T09:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "pipe_002",
+      "employer_id": "emp_002",
+      "candidate_id": "cand_002",
+      "job_id": "job_004",
+      "stage": "Offer",
+      "candidate_notes": "Asked for benefits summary.",
+      "internal_tags": [
+        "design-system",
+        "a11y"
+      ],
+      "last_contact_date": "2026-05-01T09:00:00Z",
+      "next_follow_up_date": "2026-08-29T09:00:00Z",
+      "assigned_recruiter_user_id": "usr_emp_002",
+      "stage_history": [
+        {
+          "stage": "New",
+          "at": "2026-05-01T09:00:00Z"
+        },
+        {
+          "stage": "Reviewed",
+          "at": "2026-05-02T09:00:00Z"
+        },
+        {
+          "stage": "Shortlisted",
+          "at": "2026-05-03T09:00:00Z"
+        },
+        {
+          "stage": "Interview",
+          "at": "2026-05-04T09:00:00Z"
+        },
+        {
+          "stage": "Offer",
+          "at": "2026-05-05T09:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "pipe_003",
+      "employer_id": "emp_002",
+      "candidate_id": "cand_003",
+      "job_id": "job_005",
+      "stage": "Hired",
+      "candidate_notes": "Start date confirmed.",
+      "internal_tags": [
+        "analytics",
+        "accepted"
+      ],
+      "last_contact_date": "2026-04-15T09:00:00Z",
+      "next_follow_up_date": "2026-09-07T09:00:00Z",
+      "assigned_recruiter_user_id": "usr_emp_002",
+      "stage_history": [
+        {
+          "stage": "New",
+          "at": "2026-04-15T09:00:00Z"
+        },
+        {
+          "stage": "Reviewed",
+          "at": "2026-04-16T09:00:00Z"
+        },
+        {
+          "stage": "Shortlisted",
+          "at": "2026-04-17T09:00:00Z"
+        },
+        {
+          "stage": "Interview",
+          "at": "2026-04-18T09:00:00Z"
+        },
+        {
+          "stage": "Assessment",
+          "at": "2026-04-19T09:00:00Z"
+        },
+        {
+          "stage": "Offer",
+          "at": "2026-04-21T09:00:00Z"
+        },
+        {
+          "stage": "Hired",
+          "at": "2026-04-25T09:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "pipe_004",
+      "employer_id": "emp_001",
+      "candidate_id": "cand_003",
+      "job_id": "job_002",
+      "stage": "Rejected",
+      "candidate_notes": "",
+      "internal_tags": [
+        "backend-gap"
+      ],
+      "last_contact_date": "2026-03-11T09:00:00Z",
+      "next_follow_up_date": null,
+      "assigned_recruiter_user_id": null,
+      "stage_history": [
+        {
+          "stage": "New",
+          "at": "2026-03-11T09:00:00Z"
+        },
+        {
+          "stage": "Reviewed",
+          "at": "2026-03-12T09:00:00Z"
+        },
+        {
+          "stage": "Rejected",
+          "at": "2026-03-16T09:00:00Z"
+        }
+      ]
+    }
+  ],
+  "16. Outreach messages": [
+    {
+      "id": "out_001",
+      "employer_id": "emp_001",
+      "recipient_candidate_id": "cand_001",
+      "subject": "Full-stack role at Northstar Works",
+      "message": "Hello Alex, your React and Python background looks aligned with our full-stack opening.",
+      "template_used_id": "tpl_005",
+      "delivery_status": "sent",
+      "opened_status": true,
+      "replied_status": true,
+      "sent_date": "2026-05-30T09:00:00Z",
+      "follow_up_date": "2026-06-04T09:00:00Z"
+    },
+    {
+      "id": "out_002",
+      "employer_id": "emp_002",
+      "recipient_candidate_id": "cand_002",
+      "subject": "Design systems opportunity",
+      "message": "We are building an accessible analytics design system and would love to share details.",
+      "template_used_id": "tpl_005",
+      "delivery_status": "sent",
+      "opened_status": true,
+      "replied_status": false,
+      "sent_date": "2026-05-05T09:00:00Z",
+      "follow_up_date": "2026-05-11T09:00:00Z"
+    },
+    {
+      "id": "out_003",
+      "employer_id": "emp_001",
+      "recipient_candidate_id": "cand_003",
+      "subject": "Analyst opening",
+      "message": "Draft outreach for review before sending.",
+      "template_used_id": "tpl_005",
+      "delivery_status": "draft",
+      "opened_status": false,
+      "replied_status": false,
+      "sent_date": null,
+      "follow_up_date": null
+    },
+    {
+      "id": "out_004",
+      "employer_id": "emp_001",
+      "recipient_candidate_id": "cand_004",
+      "subject": "Opportunity",
+      "message": "Synthetic failed-delivery test record.",
+      "template_used_id": "tpl_005",
+      "delivery_status": "failed",
+      "opened_status": false,
+      "replied_status": false,
+      "sent_date": "2026-03-31T09:00:00Z",
+      "follow_up_date": "2026-04-03T09:00:00Z",
+      "failure_message": "recipient_mailbox_unavailable"
+    },
+    {
+      "id": "out_005",
+      "employer_id": "emp_002",
+      "recipient_candidate_id": "cand_001",
+      "subject": "Backend platform role",
+      "message": "Following up on the backend platform opening.",
+      "template_used_id": "tpl_006",
+      "delivery_status": "sent",
+      "opened_status": true,
+      "replied_status": true,
+      "sent_date": "2026-03-23T09:00:00Z",
+      "follow_up_date": "2026-03-26T09:00:00Z"
+    },
+    {
+      "id": "out_006",
+      "employer_id": "emp_002",
+      "recipient_candidate_id": "cand_003",
+      "subject": "Data analyst screening",
+      "message": "Checking whether you would like to continue with the screening call.",
+      "template_used_id": "tpl_001",
+      "delivery_status": "sent",
+      "opened_status": false,
+      "replied_status": false,
+      "sent_date": "2026-03-18T09:00:00Z",
+      "follow_up_date": "2026-03-25T09:00:00Z"
+    }
+  ],
+  "17. Offers": [
+    {
+      "id": "offer_001",
+      "candidate_id": "cand_002",
+      "job_id": "job_004",
+      "salary": {
+        "currency": "INR",
+        "amount": 2100000,
+        "period": "annual"
+      },
+      "equity": "0.10% options",
+      "start_date": "2026-10-05",
+      "expiration_date": "2026-09-20",
+      "benefits_summary": "Health allowance, learning budget, flexible leave.",
+      "offer_status": "sent",
+      "recruiter_notes": "Await candidate response.",
+      "candidate_response_date": null
+    },
+    {
+      "id": "offer_002",
+      "candidate_id": "cand_003",
+      "job_id": "job_005",
+      "salary": {
+        "currency": "INR",
+        "amount": 1600000,
+        "period": "annual"
+      },
+      "equity": "None",
+      "start_date": "2026-10-01",
+      "expiration_date": "2026-08-15",
+      "benefits_summary": "Health allowance, remote stipend, learning budget.",
+      "offer_status": "accepted",
+      "recruiter_notes": "Candidate accepted.",
+      "candidate_response_date": "2026-08-10T10:00:00Z"
+    },
+    {
+      "id": "offer_003",
+      "candidate_id": "cand_001",
+      "job_id": "job_003",
+      "salary": {
+        "currency": "INR",
+        "amount": 2500000,
+        "period": "annual"
+      },
+      "equity": "0.05% options",
+      "start_date": "2026-11-02",
+      "expiration_date": "2026-09-01",
+      "benefits_summary": "Health allowance, equipment support, flexible leave.",
+      "offer_status": "declined",
+      "recruiter_notes": "Synthetic declined offer branch.",
+      "candidate_response_date": "2026-08-28T09:30:00Z"
+    },
+    {
+      "id": "offer_004",
+      "candidate_id": "cand_003",
+      "job_id": "job_006",
+      "salary": {
+        "currency": "INR",
+        "amount": 2200000,
+        "period": "annual"
+      },
+      "equity": "None",
+      "start_date": "2026-10-20",
+      "expiration_date": "2026-07-15",
+      "benefits_summary": "Health allowance and learning budget.",
+      "offer_status": "expired",
+      "recruiter_notes": "No response before expiration.",
+      "candidate_response_date": null
+    },
+    {
+      "id": "offer_005",
+      "candidate_id": "cand_001",
+      "job_id": "job_002",
+      "salary": {
+        "currency": "INR",
+        "amount": 2350000,
+        "period": "annual"
+      },
+      "equity": "None",
+      "start_date": "2026-10-15",
+      "expiration_date": "2026-09-30",
+      "benefits_summary": "Health allowance, equipment support.",
+      "offer_status": "draft",
+      "recruiter_notes": "Awaiting compensation approval.",
+      "candidate_response_date": null
+    }
+  ],
+  "18. Templates": [
+    {
+      "id": "tpl_001",
+      "employer_id": "emp_001",
+      "type": "interview_invitation",
+      "name": "Standard interview invitation",
+      "body": "Hello {{candidate_name}}, we would like to invite you to an interview for {{job_title}}.",
+      "status": "active"
+    },
+    {
+      "id": "tpl_002",
+      "employer_id": "emp_001",
+      "type": "rejection_email",
+      "name": "Respectful rejection",
+      "body": "Thank you for your time and interest. We will not be moving forward at this stage.",
+      "status": "active"
+    },
+    {
+      "id": "tpl_003",
+      "employer_id": "emp_001",
+      "type": "offer_email",
+      "name": "Offer email",
+      "body": "We are pleased to share an offer for {{job_title}}.",
+      "status": "active"
+    },
+    {
+      "id": "tpl_004",
+      "employer_id": "emp_001",
+      "type": "follow_up_message",
+      "name": "Candidate follow-up",
+      "body": "Following up on the next step for {{job_title}}.",
+      "status": "archived"
+    },
+    {
+      "id": "tpl_005",
+      "employer_id": "emp_002",
+      "type": "candidate_outreach",
+      "name": "Warm outreach",
+      "body": "Your experience in {{skill_area}} looks relevant to {{job_title}}.",
+      "status": "active"
+    },
+    {
+      "id": "tpl_006",
+      "employer_id": "emp_002",
+      "type": "application_update",
+      "name": "Application update",
+      "body": "Your application for {{job_title}} has moved to {{stage}}.",
+      "status": "active"
+    }
+  ],
+  "19. Team members": [
+    {
+      "id": "team_001",
+      "employer_id": "emp_001",
+      "user_id": "usr_emp_001",
+      "role": "Owner",
+      "status": "active",
+      "permissions": [
+        "manage_team",
+        "manage_jobs",
+        "view_candidates",
+        "send_outreach"
+      ]
+    },
+    {
+      "id": "team_002",
+      "employer_id": "emp_001",
+      "user_id": "usr_cand_004",
+      "role": "Admin",
+      "status": "active",
+      "permissions": [
+        "manage_jobs",
+        "view_reports"
+      ]
+    },
+    {
+      "id": "team_003",
+      "employer_id": "emp_001",
+      "user_id": null,
+      "role": "Recruiter",
+      "status": "pending_invitation",
+      "permissions": [
+        "view_candidates",
+        "send_outreach"
+      ]
+    },
+    {
+      "id": "team_004",
+      "employer_id": "emp_001",
+      "user_id": "usr_cand_003",
+      "role": "Hiring manager",
+      "status": "active",
+      "permissions": [
+        "view_pipeline",
+        "leave_feedback"
+      ]
+    },
+    {
+      "id": "team_005",
+      "employer_id": "emp_002",
+      "user_id": "usr_emp_002",
+      "role": "Owner",
+      "status": "active",
+      "permissions": [
+        "manage_team",
+        "manage_jobs",
+        "view_candidates",
+        "send_outreach"
+      ]
+    },
+    {
+      "id": "team_006",
+      "employer_id": "emp_002",
+      "user_id": "usr_cand_002",
+      "role": "Viewer",
+      "status": "removed",
+      "permissions": [
+        "view_jobs"
+      ]
+    }
+  ],
+  "20. Notifications": [
+    {
+      "id": "notif_001",
+      "recipient_type": "candidate",
+      "recipient_id": "cand_001",
+      "type": "New job match",
+      "title": "98% match found",
+      "message": "Full-stack Engineer at Northstar Works matches your profile at 98%.",
+      "read_status": "unread",
+      "archived": false,
+      "urgent": false,
+      "created_at": "2026-05-25T09:00:00Z"
+    },
+    {
+      "id": "notif_002",
+      "recipient_type": "candidate",
+      "recipient_id": "cand_001",
+      "type": "Application status change",
+      "title": "Application moved to Interview",
+      "message": "Your Northstar Works application has advanced.",
+      "read_status": "read",
+      "archived": false,
+      "urgent": false,
+      "created_at": "2026-05-24T09:00:00Z"
+    },
+    {
+      "id": "notif_003",
+      "recipient_type": "candidate",
+      "recipient_id": "cand_002",
+      "type": "Interview invitation",
+      "title": "Interview invitation",
+      "message": "BlueOrbit Labs invited you to a portfolio interview.",
+      "read_status": "unread",
+      "archived": false,
+      "urgent": true,
+      "created_at": "2026-05-03T09:00:00Z"
+    },
+    {
+      "id": "notif_004",
+      "recipient_type": "candidate",
+      "recipient_id": "cand_003",
+      "type": "Offer received",
+      "title": "Offer received",
+      "message": "A Data Analyst offer is waiting for your response.",
+      "read_status": "unread",
+      "archived": false,
+      "urgent": true,
+      "created_at": "2026-04-20T09:00:00Z"
+    },
+    {
+      "id": "notif_005",
+      "recipient_type": "candidate",
+      "recipient_id": "cand_003",
+      "type": "Training reminder",
+      "title": "Training reminder",
+      "message": "Complete your Data Scientist interview practice.",
+      "read_status": "read",
+      "archived": true,
+      "urgent": false,
+      "created_at": "2026-02-14T09:00:00Z"
+    },
+    {
+      "id": "notif_006",
+      "recipient_type": "candidate",
+      "recipient_id": "cand_001",
+      "type": "Resume optimization complete",
+      "title": "Resume optimized",
+      "message": "Your latest resume reached ATS score 94.",
+      "read_status": "read",
+      "archived": false,
+      "urgent": false,
+      "created_at": "2026-02-04T09:00:00Z"
+    },
+    {
+      "id": "notif_007",
+      "recipient_type": "employer",
+      "recipient_id": "emp_001",
+      "type": "Recruiter message",
+      "title": "Candidate replied",
+      "message": "Alex Rivera replied to your outreach.",
+      "read_status": "unread",
+      "archived": false,
+      "urgent": false,
+      "created_at": "2026-05-30T09:00:00Z"
+    },
+    {
+      "id": "notif_008",
+      "recipient_type": "employer",
+      "recipient_id": "emp_001",
+      "type": "Failed operation",
+      "title": "External application failed",
+      "message": "Synthetic external submission returned timeout.",
+      "read_status": "unread",
+      "archived": false,
+      "urgent": true,
+      "created_at": "2026-02-19T09:00:00Z"
+    },
+    {
+      "id": "notif_009",
+      "recipient_type": "employer",
+      "recipient_id": "emp_002",
+      "type": "System warning",
+      "title": "No recruiter assigned",
+      "message": "A rejected pipeline record is missing recruiter assignment.",
+      "read_status": "read",
+      "archived": false,
+      "urgent": false,
+      "created_at": "2026-03-11T09:00:00Z"
+    }
+  ],
+  "21. Job-hunt settings": [
+    {
+      "id": "jhset_001",
+      "candidate_id": "cand_001",
+      "enabled": true,
+      "target_roles": [
+        "Full-stack Engineer",
+        "Backend Engineer"
+      ],
+      "target_locations": [
+        "India",
+        "Remote"
+      ],
+      "salary_min": {
+        "currency": "INR",
+        "amount": 1800000
+      },
+      "remote_preference": "preferred",
+      "max_applications_per_day": 5,
+      "resume_selection_id": "resume_001",
+      "cover_letter_preference": "generate_when_match_above_80",
+      "approval_required": true
+    },
+    {
+      "id": "jhset_002",
+      "candidate_id": "cand_002",
+      "enabled": false,
+      "target_roles": [
+        "Product Designer"
+      ],
+      "target_locations": [
+        "Bengaluru"
+      ],
+      "salary_min": {
+        "currency": "INR",
+        "amount": 1400000
+      },
+      "remote_preference": "hybrid_only",
+      "max_applications_per_day": 2,
+      "resume_selection_id": "resume_002",
+      "cover_letter_preference": "always_generate",
+      "approval_required": true
+    },
+    {
+      "id": "jhset_003",
+      "candidate_id": "cand_003",
+      "enabled": true,
+      "target_roles": [
+        "Data Analyst",
+        "Data Scientist"
+      ],
+      "target_locations": [
+        "Remote",
+        "Bengaluru"
+      ],
+      "salary_min": {
+        "currency": "USD",
+        "amount": 45000
+      },
+      "remote_preference": "remote_only",
+      "max_applications_per_day": 3,
+      "resume_selection_id": "resume_003",
+      "cover_letter_preference": "generate_when_match_above_70",
+      "approval_required": false
+    },
+    {
+      "id": "jhset_004",
+      "candidate_id": "cand_004",
+      "enabled": false,
+      "target_roles": [],
+      "target_locations": [],
+      "salary_min": null,
+      "remote_preference": "unknown",
+      "max_applications_per_day": 0,
+      "resume_selection_id": null,
+      "cover_letter_preference": "never",
+      "approval_required": true
+    }
+  ],
+  "22. Job-hunt runs": [
+    {
+      "id": "jhrun_001",
+      "candidate_id": "cand_001",
+      "started_date": "2026-06-04T09:00:00Z",
+      "completed_date": "2026-06-04T11:00:00Z",
+      "status": "completed",
+      "jobs_scanned": 120,
+      "jobs_matched": 18,
+      "applications_submitted": 4,
+      "applications_skipped": 14,
+      "failure_message": null
+    },
+    {
+      "id": "jhrun_002",
+      "candidate_id": "cand_003",
+      "started_date": "2026-03-16T09:00:00Z",
+      "completed_date": null,
+      "status": "failed",
+      "jobs_scanned": 42,
+      "jobs_matched": 9,
+      "applications_submitted": 2,
+      "applications_skipped": 7,
+      "failure_message": "External application provider rate limit in synthetic failure mode."
+    },
+    {
+      "id": "jhrun_003",
+      "candidate_id": "cand_002",
+      "started_date": "2026-02-04T09:00:00Z",
+      "completed_date": null,
+      "status": "pending_approval",
+      "jobs_scanned": 30,
+      "jobs_matched": 5,
+      "applications_submitted": 0,
+      "applications_skipped": 5,
+      "failure_message": null
+    }
+  ],
+  "23. Proposal drafts": [
+    {
+      "id": "prop_001",
+      "candidate_id": "cand_001",
+      "job_id": "job_003",
+      "generated_proposal": "I bring six years of full-stack experience across React, Python, and PostgreSQL, with a measurable record of improving performance and reliability.",
+      "match_explanation": "98% skill overlap and strong experience-level alignment.",
+      "approval_status": "approved",
+      "candidate_feedback": "Emphasize architecture impact.",
+      "created_at": "2026-05-30T09:00:00Z",
+      "updated_at": "2026-05-31T09:00:00Z"
+    },
+    {
+      "id": "prop_002",
+      "candidate_id": "cand_003",
+      "job_id": "job_006",
+      "generated_proposal": "I combine SQL and Python analytics experience with a hands-on churn classification project.",
+      "match_explanation": "67% overlap; strong analytical foundation but limited production ML experience.",
+      "approval_status": "pending",
+      "candidate_feedback": null,
+      "created_at": "2026-04-10T09:00:00Z",
+      "updated_at": "2026-04-10T09:00:00Z"
+    },
+    {
+      "id": "prop_003",
+      "candidate_id": "cand_002",
+      "job_id": "job_007",
+      "generated_proposal": "My product design background can inform product discovery and analytics workflows.",
+      "match_explanation": "29% match; transferable skills only.",
+      "approval_status": "rejected",
+      "candidate_feedback": "Not aligned to target career path.",
+      "created_at": "2026-03-21T09:00:00Z",
+      "updated_at": "2026-03-22T09:00:00Z"
+    },
+    {
+      "id": "prop_004",
+      "candidate_id": "cand_001",
+      "job_id": "job_011",
+      "generated_proposal": "Candidate proposal draft expired before approval.",
+      "match_explanation": "46% match for a closed role.",
+      "approval_status": "expired",
+      "candidate_feedback": null,
+      "created_at": "2026-03-06T09:00:00Z",
+      "updated_at": "2026-04-05T09:00:00Z"
+    }
+  ],
+  "24. Application and account settings": {
+    "candidate_settings": [
+      {
+        "id": "cset_001",
+        "candidate_id": "cand_001",
+        "profile_settings": {
+          "profile_visibility": "public",
+          "show_salary_expectations": true
+        },
+        "notification_preferences": {
+          "job_matches": true,
+          "application_updates": true,
+          "messages": true
+        },
+        "privacy_preferences": {
+          "allow_recruiter_search": true,
+          "share_activity": false
+        },
+        "security_settings": {
+          "two_factor_enabled": true,
+          "session_timeout_minutes": 30
+        },
+        "email_preferences": {
+          "transactional": true,
+          "digest": true
+        },
+        "marketing_preferences": {
+          "marketing_emails": false
+        },
+        "application_visibility": "recruiters_and_candidate",
+        "availability_status": "open_to_opportunities"
+      },
+      {
+        "id": "cset_002",
+        "candidate_id": "cand_002",
+        "profile_settings": {
+          "profile_visibility": "recruiters_only",
+          "show_salary_expectations": false
+        },
+        "notification_preferences": {
+          "job_matches": true,
+          "application_updates": true,
+          "messages": true
+        },
+        "privacy_preferences": {
+          "allow_recruiter_search": true,
+          "share_activity": false
+        },
+        "security_settings": {
+          "two_factor_enabled": false,
+          "session_timeout_minutes": 60
+        },
+        "email_preferences": {
+          "transactional": true,
+          "digest": false
+        },
+        "marketing_preferences": {
+          "marketing_emails": false
+        },
+        "application_visibility": "recruiters_and_candidate",
+        "availability_status": "actively_looking"
+      },
+      {
+        "id": "cset_003",
+        "candidate_id": "cand_003",
+        "profile_settings": {
+          "profile_visibility": "public",
+          "show_salary_expectations": false
+        },
+        "notification_preferences": {
+          "job_matches": true,
+          "application_updates": true,
+          "messages": false
+        },
+        "privacy_preferences": {
+          "allow_recruiter_search": true,
+          "share_activity": true
+        },
+        "security_settings": {
+          "two_factor_enabled": false,
+          "session_timeout_minutes": 60
+        },
+        "email_preferences": {
+          "transactional": true,
+          "digest": true
+        },
+        "marketing_preferences": {
+          "marketing_emails": true
+        },
+        "application_visibility": "candidate_only_after_apply",
+        "availability_status": "available_in_60_days"
+      },
+      {
+        "id": "cset_004",
+        "candidate_id": "cand_004",
+        "profile_settings": {
+          "profile_visibility": "private",
+          "show_salary_expectations": false
+        },
+        "notification_preferences": {
+          "job_matches": false,
+          "application_updates": false,
+          "messages": false
+        },
+        "privacy_preferences": {
+          "allow_recruiter_search": false,
+          "share_activity": false
+        },
+        "security_settings": {
+          "two_factor_enabled": false,
+          "session_timeout_minutes": 15
+        },
+        "email_preferences": {
+          "transactional": true,
+          "digest": false
+        },
+        "marketing_preferences": {
+          "marketing_emails": false
+        },
+        "application_visibility": "private",
+        "availability_status": "unknown"
+      }
+    ],
+    "employer_settings": [
+      {
+        "id": "eset_001",
+        "employer_id": "emp_001",
+        "profile_settings": {
+          "company_profile_visibility": "public",
+          "show_team_size": true
+        },
+        "notification_preferences": {
+          "new_application": true,
+          "candidate_message": true,
+          "offer_event": true
+        },
+        "privacy_preferences": {
+          "mask_candidate_phone_until_stage": "Interview"
+        },
+        "security_settings": {
+          "two_factor_required": true,
+          "session_timeout_minutes": 30
+        },
+        "email_preferences": {
+          "transactional": true,
+          "digest": true
+        },
+        "marketing_preferences": {
+          "marketing_emails": false
+        },
+        "application_visibility": "team_only",
+        "availability_status": "recruiting"
+      },
+      {
+        "id": "eset_002",
+        "employer_id": "emp_002",
+        "profile_settings": {
+          "company_profile_visibility": "public",
+          "show_team_size": true
+        },
+        "notification_preferences": {
+          "new_application": true,
+          "candidate_message": true,
+          "offer_event": true
+        },
+        "privacy_preferences": {
+          "mask_candidate_phone_until_stage": "Screening"
+        },
+        "security_settings": {
+          "two_factor_required": false,
+          "session_timeout_minutes": 60
+        },
+        "email_preferences": {
+          "transactional": true,
+          "digest": false
+        },
+        "marketing_preferences": {
+          "marketing_emails": true
+        },
+        "application_visibility": "team_only",
+        "availability_status": "recruiting"
+      }
+    ]
+  },
+  "25. Relationship summary": {
+    "counts": {
+      "1. Users": 6,
+      "2. Candidate profiles": 4,
+      "3. Employer profiles": 2,
+      "4. Companies": 3,
+      "5. Resumes": 3,
+      "6. Portfolio projects": 9,
+      "portfolio_templates": 3,
+      "portfolio_drafts": 1,
+      "7. Jobs": 12,
+      "8. Applications": 16,
+      "9. Cover letters": 6,
+      "10. Training sessions": 7,
+      "training_steps": 14,
+      "11. Interview questions": 10,
+      "12. Interview answers": 5,
+      "13. Coding challenges": 5,
+      "14. Coding submissions": 5,
+      "15. Pipeline records": 4,
+      "16. Outreach messages": 6,
+      "17. Offers": 5,
+      "18. Templates": 6,
+      "19. Team members": 6,
+      "20. Notifications": 9,
+      "21. Job-hunt settings": 4,
+      "22. Job-hunt runs": 3,
+      "23. Proposal drafts": 4,
+      "24. Application and account settings": 6
+    },
+    "primary_demo_candidate": "cand_001",
+    "primary_demo_employer": "emp_001",
+    "primary_demo_company": "co_001",
+    "job_match_examples": {
+      "very_high": {
+        "candidate_id": "cand_001",
+        "job_id": "job_003",
+        "score": 98
+      },
+      "medium": {
+        "candidate_id": "cand_003",
+        "job_id": "job_006",
+        "score": 67
+      },
+      "poor": {
+        "candidate_id": "cand_001",
+        "job_id": "job_010",
+        "score": 22
+      }
+    },
+    "explicit_edge_cases": [
+      "cand_004 empty profile",
+      "cand_004 has no resume",
+      "cand_004 has no portfolio projects",
+      "job_012 no applicants and no salary",
+      "app_012 failed external application",
+      "training train_006 failed due to missing prerequisites",
+      "ia_005 empty interview transcript",
+      "cs_004 timed-out coding submission",
+      "offer_004 expired offer",
+      "out_004 failed outreach",
+      "pipe_004 missing recruiter assignment",
+      "app_012 duplicate-looking but unique application",
+      "cl_003 missing job details",
+      "team_003 pending invitation",
+      "team_006 removed member",
+      "URLs are invalid/unavailable placeholders on example.invalid"
+    ]
+  },
+  "26. Validation checklist": {
+    "all_foreign_keys_resolve": true,
+    "foreign_key_errors": [],
+    "application_status_coverage": {
+      "required": [
+        "Applied",
+        "Assessment",
+        "Hired",
+        "Interview",
+        "Offer",
+        "Rejected",
+        "Saved",
+        "Screening",
+        "Withdrawn"
+      ],
+      "present": [
+        "Applied",
+        "Assessment",
+        "Hired",
+        "Interview",
+        "Offer",
+        "Rejected",
+        "Saved",
+        "Screening",
+        "Withdrawn"
+      ],
+      "missing": []
+    },
+    "training_status_coverage": {
+      "required": [
+        "Completed",
+        "Failed",
+        "In progress",
+        "Not started",
+        "Skipped"
+      ],
+      "present": [
+        "Completed",
+        "Failed",
+        "In progress",
+        "Not started",
+        "Skipped"
+      ],
+      "missing": []
+    },
+    "offer_status_coverage": {
+      "present": [
+        "accepted",
+        "declined",
+        "draft",
+        "expired",
+        "sent"
+      ],
+      "covers_draft_sent_accepted_declined_expired": {
+        "draft": true,
+        "sent": true,
+        "accepted": true,
+        "declined": true,
+        "expired": true
+      }
+    },
+    "at_least_3_records_per_major_entity": {
+      "users": true,
+      "candidate_profiles": true,
+      "employer_profiles": true,
+      "companies": true,
+      "resumes": true,
+      "portfolio_projects": true,
+      "jobs": true,
+      "applications": true,
+      "cover_letters": true,
+      "training_sessions": true,
+      "interview_questions": true,
+      "interview_answers": true,
+      "coding_challenges": true,
+      "coding_submissions": true,
+      "pipeline_records": true,
+      "outreach": true,
+      "offers": true,
+      "templates": true,
+      "team_members": true,
+      "notifications": true,
+      "job_hunt_settings": true,
+      "job_hunt_runs": true,
+      "proposal_drafts": true
+    },
+    "fictional_data_only": true,
+    "no_real_api_keys": true
+  },
+  "27. Feature-to-record checklist": {
+    "account_and_onboarding": [
+      "usr_*",
+      "cand_*",
+      "emp_*"
+    ],
+    "profile_editor": [
+      "cand_001",
+      "cand_002",
+      "cand_003",
+      "cand_004"
+    ],
+    "resume_parser_and_optimizer": [
+      "resume_001",
+      "resume_002",
+      "resume_003"
+    ],
+    "portfolio_builder": [
+      "proj_001",
+      "proj_002",
+      "proj_003",
+      "proj_004",
+      "proj_005",
+      "proj_006",
+      "proj_007",
+      "proj_008",
+      "proj_009"
+    ],
+    "portfolio_templates": [
+      "ptpl_001",
+      "ptpl_002",
+      "ptpl_003"
+    ],
+    "ai_project_drafts": [
+      "pdraft_001"
+    ],
+    "job_discovery_and_matching": [
+      "job_001",
+      "job_002",
+      "job_003",
+      "job_004",
+      "job_005",
+      "job_006",
+      "job_007",
+      "job_008",
+      "job_009",
+      "job_010",
+      "job_011",
+      "job_012"
+    ],
+    "application_tracker": [
+      "app_001",
+      "app_002",
+      "app_003",
+      "app_004",
+      "app_005",
+      "app_006",
+      "app_007",
+      "app_008",
+      "app_009",
+      "app_010",
+      "app_011",
+      "app_012",
+      "app_013",
+      "app_014",
+      "app_015",
+      "app_016"
+    ],
+    "cover_letter_generator": [
+      "cl_001",
+      "cl_002",
+      "cl_003",
+      "cl_004",
+      "cl_005",
+      "cl_006"
+    ],
+    "career_training": [
+      "train_001",
+      "train_002",
+      "train_003",
+      "train_004",
+      "train_005",
+      "train_006",
+      "train_007",
+      "tstep_001",
+      "tstep_002",
+      "tstep_003",
+      "tstep_004",
+      "tstep_005",
+      "tstep_006",
+      "tstep_007",
+      "tstep_008",
+      "tstep_009",
+      "tstep_010",
+      "tstep_011",
+      "tstep_012",
+      "tstep_013",
+      "tstep_014"
+    ],
+    "interview_practice": [
+      "iq_001",
+      "iq_002",
+      "iq_003",
+      "iq_004",
+      "iq_005",
+      "iq_006",
+      "iq_007",
+      "iq_008",
+      "iq_009",
+      "iq_010",
+      "ia_001",
+      "ia_002",
+      "ia_003",
+      "ia_004",
+      "ia_005"
+    ],
+    "coding_assessment": [
+      "cc_001",
+      "cc_002",
+      "cc_003",
+      "cc_004",
+      "cc_005",
+      "cs_001",
+      "cs_002",
+      "cs_003",
+      "cs_004",
+      "cs_005"
+    ],
+    "employer_pipeline": [
+      "pipe_001",
+      "pipe_002",
+      "pipe_003",
+      "pipe_004"
+    ],
+    "recruiter_outreach": [
+      "out_001",
+      "out_002",
+      "out_003",
+      "out_004",
+      "out_005",
+      "out_006"
+    ],
+    "offers": [
+      "offer_001",
+      "offer_002",
+      "offer_003",
+      "offer_004",
+      "offer_005"
+    ],
+    "employer_templates": [
+      "tpl_001",
+      "tpl_002",
+      "tpl_003",
+      "tpl_004",
+      "tpl_005",
+      "tpl_006"
+    ],
+    "team_permissions": [
+      "team_001",
+      "team_002",
+      "team_003",
+      "team_004",
+      "team_005",
+      "team_006"
+    ],
+    "notifications": [
+      "notif_001",
+      "notif_002",
+      "notif_003",
+      "notif_004",
+      "notif_005",
+      "notif_006",
+      "notif_007",
+      "notif_008",
+      "notif_009"
+    ],
+    "auto_apply": [
+      "jhset_001",
+      "jhset_002",
+      "jhset_003",
+      "jhset_004",
+      "jhrun_001",
+      "jhrun_002",
+      "jhrun_003",
+      "prop_001",
+      "prop_002",
+      "prop_003",
+      "prop_004"
+    ],
+    "settings_privacy_security": [
+      "cset_001",
+      "cset_002",
+      "cset_003",
+      "cset_004",
+      "eset_001",
+      "eset_002"
+    ]
+  }
+}
