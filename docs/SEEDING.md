@@ -51,3 +51,22 @@ cover letters, outreach, and pipeline records have no matching tables in the
 current schema.
 
 Password placeholders are never read into destination rows.
+## Demo sign-in accounts
+
+`npm run seed:accounts` runs the normal seed and, before it, creates real
+sign-in accounts (email already confirmed) plus a matching `profiles` row for
+each one:
+
+Candidates: alex.rivera@demo.com, maya.chen@demo.com, samira.okafor@demo.com,
+noah.patel@demo.com
+
+Recruiters (employer role): recruiter@northstar-works-demo.com,
+noah.patel@demo.org, team_003@synthetic.example.com,
+talent@blueorbit-labs-demo.com, maya.chen@demo.org
+
+samira.okafor@demo.com appears in both source lists; one address can only be
+one account, so it is kept as a candidate and reported as a duplicate.
+
+The password is taken from `SEED_DEMO_PASSWORD` in `.env` and falls back to
+`DemoPass!2026`. Re-running the command reuses existing accounts and resets
+their password to the same value. Use demo passwords in demo projects only.
