@@ -64,8 +64,9 @@ docs/schema.sql
 
 It creates: `profiles`, `jobs`, `applications`, `candidates`, `notifications`,
 `job_hunt_settings`, `job_hunt_proposals`, `job_hunt_log`, `auto_apply_settings`,
-`auto_apply_log`, plus grants and RLS policies. No demo rows are inserted —
-the app runs on real data only.
+`auto_apply_log`, plus grants and RLS policies. The schema itself inserts no
+demo rows. To load the optional fictional test fixture, see
+[`docs/SEEDING.md`](docs/SEEDING.md).
 
 ## 5. Run locally
 
@@ -99,6 +100,8 @@ npm run build    # production build
 npm run preview  # preview the build
 npm run lint     # eslint
 npm run format   # prettier
+npm run seed:dry-run # validate and summarize the synthetic fixture
+npm run seed     # upsert the synthetic fixture into the configured database
 ```
 
 ## 8. Deploying
