@@ -1,0 +1,5 @@
+npm istall
+npm run seed:accounts
+npm run seed
+npm run dev
+npm run build
