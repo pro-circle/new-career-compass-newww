@@ -179,6 +179,7 @@ function buildSeed(data) {
     portfolio: list(data["6. Portfolio projects"]).filter((project) => project.candidate_id === row.id),
     initials: initials(row.full_name),
     email: text(users.get(row.user_id)?.email),
+    source_payload: row,
   }));
 
   const companyRows = list(data["4. Companies"]).map((row) => ({
@@ -276,6 +277,7 @@ function buildSeed(data) {
       insights: list(row.ats_recommendations).map((body, index) => ({ title: `Recommendation ${index + 1}`, body, done: false })),
       language: "English",
       updated_at: row.updated_at ?? row.created_at ?? null,
+      source_payload: row,
     };
   });
 
@@ -290,6 +292,7 @@ function buildSeed(data) {
     gradient: text(row.image_or_gradient_placeholder, "from-brand/60 to-accent/60"),
     url: text(row.project_url) || text(row.github_url),
     ord: index,
+    source_payload: row,
   }));
 
   const notificationRows = list(data["20. Notifications"]).map((row) => ({
@@ -304,6 +307,7 @@ function buildSeed(data) {
     archived: Boolean(row.archived),
     urgent: Boolean(row.urgent),
     created_at: row.created_at ?? null,
+      source_payload: row,
   }));
 
   const offerRows = list(data["17. Offers"]).map((row) => {
@@ -323,6 +327,7 @@ function buildSeed(data) {
       status: ({ draft: "Drafted", sent: "Sent", accepted: "Signed", declined: "Declined" })[text(row.offer_status).toLowerCase()] ?? "Drafted",
       sent_at: row.offer_status === "sent" ? row.candidate_response_date ?? null : null,
       details: { expirationDate: row.expiration_date, recruiterNotes: row.recruiter_notes, candidateResponseDate: row.candidate_response_date },
+      source_payload: row,
     };
   });
 
@@ -334,6 +339,7 @@ function buildSeed(data) {
     subject: text(row.name),
     body: text(row.body),
     status: text(row.status),
+    source_payload: row,
   }));
 
   const teamInviteRows = list(data["19. Team members"]).map((row) => ({
@@ -343,6 +349,7 @@ function buildSeed(data) {
     role: text(row.role, "Recruiter"),
     status: row.status === "active" ? "Active" : "Invited",
     permissions: list(row.permissions),
+    source_payload: row,
   }));
 
   const portfolioTemplateRows = list(data.portfolio_templates).map((row) => ({
@@ -399,6 +406,7 @@ function buildSeed(data) {
       waypoints: Object.fromEntries(list(data.training_steps).filter((step) => step.session_id === row.id).map((step) => [step.step_type, step.status])),
       created_at: row.created_date ?? null,
       updated_at: row.updated_date ?? row.created_date ?? null,
+      source_payload: row,
     };
   });
 
@@ -423,6 +431,7 @@ function buildSeed(data) {
       wpm: Math.round(number(row.words_per_minute)),
       duration_sec: Math.round(number(row.duration_seconds)),
       created_at: row.submission_timestamp ?? null,
+      source_payload: row,
     }];
   });
 
@@ -452,6 +461,7 @@ function buildSeed(data) {
         timedOut: Boolean(submission.timed_out),
       },
       submitted_at: submission.submitted_at ?? null,
+      source_payload: { challenge, submission },
     }];
   });
 
@@ -461,6 +471,7 @@ function buildSeed(data) {
     question: text(row.question),
     role: text(row.source_context?.target_role),
     ord: index,
+    source_payload: row,
   }));
 
   const statuses = applicationRows.reduce((counts, row) => ({ ...counts, [row.stage]: (counts[row.stage] ?? 0) + 1 }), {});

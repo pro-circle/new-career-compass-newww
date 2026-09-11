@@ -599,6 +599,7 @@ alter table public.account_settings enable row level security;
 
 -- Preserve the full source payload on compact tables used by the app.
 alter table public.jobs add column if not exists source_payload jsonb not null default '{}'::jsonb;
+alter table public.candidates add column if not exists source_payload jsonb not null default '{}'::jsonb;
 alter table public.applications alter column candidate_id type text using candidate_id::text;
 alter table public.applications add column if not exists resume_used_id text;
 alter table public.applications add column if not exists cover_letter_used_id text;
@@ -607,9 +608,19 @@ alter table public.notifications add column if not exists message text default '
 alter table public.notifications add column if not exists read_status boolean not null default false;
 alter table public.notifications add column if not exists archived boolean not null default false;
 alter table public.notifications add column if not exists urgent boolean not null default false;
+alter table public.notifications add column if not exists source_payload jsonb not null default '{}'::jsonb;
+alter table public.resumes add column if not exists source_payload jsonb not null default '{}'::jsonb;
+alter table public.portfolio_projects add column if not exists source_payload jsonb not null default '{}'::jsonb;
 alter table public.offers add column if not exists details jsonb not null default '{}'::jsonb;
+alter table public.offers add column if not exists source_payload jsonb not null default '{}'::jsonb;
 alter table public.email_templates add column if not exists status text default '';
+alter table public.email_templates add column if not exists source_payload jsonb not null default '{}'::jsonb;
 alter table public.team_invites add column if not exists permissions jsonb not null default '[]'::jsonb;
+alter table public.team_invites add column if not exists source_payload jsonb not null default '{}'::jsonb;
+alter table public.training_sessions add column if not exists source_payload jsonb not null default '{}'::jsonb;
+alter table public.training_answers add column if not exists source_payload jsonb not null default '{}'::jsonb;
+alter table public.training_challenges add column if not exists source_payload jsonb not null default '{}'::jsonb;
+alter table public.interview_questions add column if not exists source_payload jsonb not null default '{}'::jsonb;
 
 -- Existing installs originally used UUID ownership here. Text still accepts
 -- real auth UUIDs and also permits deterministic synthetic candidate IDs.
