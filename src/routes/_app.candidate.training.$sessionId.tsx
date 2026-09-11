@@ -684,7 +684,8 @@ function InterviewStep({
         },
       });
       if (res.ok && res.answer) {
-        setAnswers((a) => [...a, res.answer]);
+        const scored = res.answer;
+        setAnswers((a) => [...a, scored]);
         voice.reset();
         startedAt.current = 0;
         setIdx((i) => i + 1);
