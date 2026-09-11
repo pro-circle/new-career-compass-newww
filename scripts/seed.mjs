@@ -5,6 +5,22 @@ import { createClient } from "@supabase/supabase-js";
 const FIXTURE_PATH = resolve("scripts/fixtures/ats_engine_synthetic_dataset.json");
 const ENV_PATH = resolve(".env");
 const dryRun = process.argv.includes("--dry-run");
+const withAccounts = process.argv.includes("--with-accounts");
+
+// Demo sign-in accounts. Every address is fictional (demo / example domains).
+const DEMO_ACCOUNTS = [
+  { email: "alex.rivera@demo.com", role: "candidate", full_name: "Alex Rivera" },
+  { email: "maya.chen@demo.com", role: "candidate", full_name: "Maya Chen" },
+  { email: "samira.okafor@demo.com", role: "candidate", full_name: "Samira Okafor" },
+  { email: "noah.patel@demo.com", role: "candidate", full_name: "Noah Patel" },
+  { email: "recruiter@northstar-works-demo.com", role: "employer", full_name: "Northstar Works Recruiter" },
+  { email: "noah.patel@demo.org", role: "employer", full_name: "Noah Patel" },
+  { email: "team_003@synthetic.example.com", role: "employer", full_name: "Team Member 003" },
+  { email: "samira.okafor@demo.com", role: "employer", full_name: "Samira Okafor" },
+  { email: "talent@blueorbit-labs-demo.com", role: "employer", full_name: "BlueOrbit Labs Talent" },
+  { email: "maya.chen@demo.org", role: "employer", full_name: "Maya Chen" },
+];
+
 
 const REQUIRED_SECTIONS = [
   "metadata",
