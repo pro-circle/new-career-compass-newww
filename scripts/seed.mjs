@@ -513,6 +513,7 @@ async function main() {
   const { operations, skipped } = buildSeed(data);
   printSummary(operations, skipped, dryRun ? "dry run" : "import");
   if (dryRun) {
+    if (withAccounts) console.log(`\nWould create ${DEMO_ACCOUNTS.length} demo account(s) + profiles.`);
     console.log("\nDry run complete. No database connection was made.");
     return;
   }
@@ -527,6 +528,13 @@ async function main() {
   const db = createClient(url, serviceRoleKey, {
     auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false },
   });
+
+  if (withAccounts) {
+    const password = env.SEED_DEMO_PASSWORD || "DemoPass!2026";
+    if (password.length < 8) throw new Error("SEED_DEMO_PASSWORD must be at least 8 characters.");
+    await seedAccounts(db, data, password);
+  }
+
   for (const [table, rows] of operations) {
     if (!rows.length) continue;
     const { error } = await db.from(table).upsert(rows);
@@ -534,6 +542,7 @@ async function main() {
     console.log(`Seeded ${rows.length} row(s) into ${table}.`);
   }
   console.log("\nSeed complete.");
+
 }
 
 main().catch((error) => {
