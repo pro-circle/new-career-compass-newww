@@ -5,6 +5,22 @@ import { createClient } from "@supabase/supabase-js";
 const FIXTURE_PATH = resolve("scripts/fixtures/ats_engine_synthetic_dataset.json");
 const ENV_PATH = resolve(".env");
 const dryRun = process.argv.includes("--dry-run");
+const withAccounts = process.argv.includes("--with-accounts");
+
+// Demo sign-in accounts. Every address is fictional (demo / example domains).
+const DEMO_ACCOUNTS = [
+  { email: "alex.rivera@demo.com", role: "candidate", full_name: "Alex Rivera" },
+  { email: "maya.chen@demo.com", role: "candidate", full_name: "Maya Chen" },
+  { email: "samira.okafor@demo.com", role: "candidate", full_name: "Samira Okafor" },
+  { email: "noah.patel@demo.com", role: "candidate", full_name: "Noah Patel" },
+  { email: "recruiter@northstar-works-demo.com", role: "employer", full_name: "Northstar Works Recruiter" },
+  { email: "noah.patel@demo.org", role: "employer", full_name: "Noah Patel" },
+  { email: "team_003@synthetic.example.com", role: "employer", full_name: "Team Member 003" },
+  { email: "samira.okafor@demo.com", role: "employer", full_name: "Samira Okafor" },
+  { email: "talent@blueorbit-labs-demo.com", role: "employer", full_name: "BlueOrbit Labs Talent" },
+  { email: "maya.chen@demo.org", role: "employer", full_name: "Maya Chen" },
+];
+
 
 const REQUIRED_SECTIONS = [
   "metadata",
@@ -404,7 +420,86 @@ function buildSeed(data) {
   };
 }
 
+function profileDetailsByEmail(data) {
+  const users = new Map(list(data["1. Users"]).map((row) => [row.id, row]));
+  const byEmail = new Map();
+  for (const row of list(data["2. Candidate profiles"])) {
+    const email = text(users.get(row.user_id)?.email).toLowerCase();
+    if (!email) continue;
+    byEmail.set(email, {
+      headline: text(row.headline),
+      summary: text(row.professional_summary),
+      location: text(row.location),
+      years_exp: number(row.years_experience),
+      target_roles: list(row.target_roles),
+      skills: list(row.skills),
+    });
+  }
+  return byEmail;
+}
+
+async function findUserByEmail(db, email) {
+  for (let page = 1; page <= 20; page += 1) {
+    const { data, error } = await db.auth.admin.listUsers({ page, perPage: 200 });
+    if (error) throw new Error(`Failed to list auth users: ${error.message}`);
+    const match = data.users.find((user) => user.email?.toLowerCase() === email);
+    if (match) return match;
+    if (data.users.length < 200) return null;
+  }
+  return null;
+}
+
+async function seedAccounts(db, data, password) {
+  const details = profileDetailsByEmail(data);
+  const seen = new Set();
+  const profiles = [];
+  const notes = [];
+
+  for (const account of DEMO_ACCOUNTS) {
+    const email = account.email.toLowerCase();
+    if (seen.has(email)) {
+      notes.push(`${email}: duplicate address in the demo list — kept the first role only`);
+      continue;
+    }
+    seen.add(email);
+
+    let user = await findUserByEmail(db, email);
+    if (user) {
+      const { error } = await db.auth.admin.updateUserById(user.id, { password, email_confirm: true });
+      if (error) throw new Error(`Failed to update account ${email}: ${error.message}`);
+      notes.push(`${email}: existing account reused (password reset to the demo password)`);
+    } else {
+      const { data: created, error } = await db.auth.admin.createUser({
+        email,
+        password,
+        email_confirm: true,
+        user_metadata: { full_name: account.full_name, role: account.role },
+      });
+      if (error) throw new Error(`Failed to create account ${email}: ${error.message}`);
+      user = created.user;
+      notes.push(`${email}: account created`);
+    }
+
+    profiles.push({
+      id: user.id,
+      email,
+      role: account.role,
+      full_name: account.full_name,
+      onboarded: true,
+      ...(details.get(email) ?? {}),
+    });
+  }
+
+  const { error } = await db.from("profiles").upsert(profiles);
+  if (error) throw new Error(`Failed to seed profiles: ${error.message}`);
+
+  console.log(`\nSeeded ${profiles.length} demo account(s) and profile row(s).`);
+  for (const note of notes) console.log(`  ${note}`);
+  console.log(`  Password for every demo account: ${password}`);
+}
+
 function printSummary(operations, skipped, mode) {
+
   console.log(`\nATS synthetic seed ${mode}`);
   console.log("Imported/mapped:");
   for (const [table, rows] of operations) console.log(`  ${table.padEnd(24)} ${rows.length}`);
@@ -418,6 +513,7 @@ async function main() {
   const { operations, skipped } = buildSeed(data);
   printSummary(operations, skipped, dryRun ? "dry run" : "import");
   if (dryRun) {
+    if (withAccounts) console.log(`\nWould create ${DEMO_ACCOUNTS.length} demo account(s) + profiles.`);
     console.log("\nDry run complete. No database connection was made.");
     return;
   }
@@ -432,6 +528,13 @@ async function main() {
   const db = createClient(url, serviceRoleKey, {
     auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false },
   });
+
+  if (withAccounts) {
+    const password = env.SEED_DEMO_PASSWORD || "DemoPass!2026";
+    if (password.length < 8) throw new Error("SEED_DEMO_PASSWORD must be at least 8 characters.");
+    await seedAccounts(db, data, password);
+  }
+
   for (const [table, rows] of operations) {
     if (!rows.length) continue;
     const { error } = await db.from(table).upsert(rows);
@@ -439,6 +542,7 @@ async function main() {
     console.log(`Seeded ${rows.length} row(s) into ${table}.`);
   }
   console.log("\nSeed complete.");
+
 }
 
 main().catch((error) => {
