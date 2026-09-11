@@ -469,3 +469,158 @@ create index if not exists training_challenges_session_idx
   on public.training_challenges (session_id, created_at);
 alter table public.training_challenges enable row level security;
 grant all on public.training_challenges to service_role;
+
+-- ---------------------------------------------------------------------------
+-- Synthetic fixture coverage
+-- These tables retain source records that do not fit the app's compact view
+-- models. Text identifiers intentionally support deterministic fixture IDs.
+-- ---------------------------------------------------------------------------
+
+create table if not exists public.companies (
+  id text primary key,
+  name text not null,
+  industry text default '',
+  location text default '',
+  website text default '',
+  description text default '',
+  team_size text default '',
+  logo_placeholder text default '',
+  created_at timestamptz default now()
+);
+grant all on public.companies to service_role;
+alter table public.companies enable row level security;
+
+create table if not exists public.employer_profiles (
+  id text primary key,
+  source_user_id text,
+  company_id text references public.companies(id) on delete set null,
+  recruiter_profile jsonb not null default '{}'::jsonb,
+  notification_settings jsonb not null default '{}'::jsonb,
+  subscription_plan text default '',
+  plan_status text default ''
+);
+grant all on public.employer_profiles to service_role;
+alter table public.employer_profiles enable row level security;
+
+create table if not exists public.cover_letters (
+  id text primary key,
+  candidate_id text not null,
+  job_id text references public.jobs(id) on delete set null,
+  hiring_manager_name text default '',
+  company_name text default '',
+  job_title text default '',
+  job_description text default '',
+  candidate_highlights text[] not null default '{}',
+  tone text default 'professional',
+  length text default 'medium',
+  generated_content text default '',
+  draft_status text default 'draft',
+  final_status text default 'not_final',
+  created_at timestamptz default now(),
+  updated_at timestamptz default now()
+);
+grant all on public.cover_letters to service_role;
+alter table public.cover_letters enable row level security;
+
+create table if not exists public.pipeline_records (
+  id text primary key,
+  employer_id text,
+  candidate_id text not null,
+  job_id text references public.jobs(id) on delete set null,
+  stage text default 'New',
+  candidate_notes text default '',
+  internal_tags text[] not null default '{}',
+  last_contact_at timestamptz,
+  next_follow_up_at timestamptz,
+  assigned_recruiter_user_id text,
+  stage_history jsonb not null default '[]'::jsonb
+);
+grant all on public.pipeline_records to service_role;
+alter table public.pipeline_records enable row level security;
+
+create table if not exists public.outreach_messages (
+  id text primary key,
+  employer_id text,
+  recipient_candidate_id text not null,
+  subject text default '',
+  message text default '',
+  template_used_id text,
+  delivery_status text default 'draft',
+  opened boolean not null default false,
+  replied boolean not null default false,
+  sent_at timestamptz,
+  follow_up_at timestamptz,
+  failure_message text default ''
+);
+grant all on public.outreach_messages to service_role;
+alter table public.outreach_messages enable row level security;
+
+create table if not exists public.portfolio_templates (
+  id text primary key,
+  name text not null,
+  category text default '',
+  sections jsonb not null default '[]'::jsonb,
+  theme jsonb not null default '{}'::jsonb,
+  active boolean not null default true
+);
+grant all on public.portfolio_templates to service_role;
+alter table public.portfolio_templates enable row level security;
+
+create table if not exists public.job_hunt_runs (
+  id text primary key,
+  candidate_id text not null,
+  started_at timestamptz,
+  completed_at timestamptz,
+  status text default '',
+  jobs_scanned int not null default 0,
+  jobs_matched int not null default 0,
+  applications_submitted int not null default 0,
+  applications_skipped int not null default 0,
+  failure_message text default ''
+);
+grant all on public.job_hunt_runs to service_role;
+alter table public.job_hunt_runs enable row level security;
+
+create table if not exists public.account_settings (
+  id text primary key,
+  owner_type text not null check (owner_type in ('candidate', 'employer')),
+  owner_id text not null,
+  profile_settings jsonb not null default '{}'::jsonb,
+  notification_preferences jsonb not null default '{}'::jsonb,
+  privacy_preferences jsonb not null default '{}'::jsonb,
+  security_settings jsonb not null default '{}'::jsonb,
+  email_preferences jsonb not null default '{}'::jsonb,
+  marketing_preferences jsonb not null default '{}'::jsonb,
+  application_visibility text default '',
+  availability_status text default ''
+);
+grant all on public.account_settings to service_role;
+alter table public.account_settings enable row level security;
+
+-- Preserve the full source payload on compact tables used by the app.
+alter table public.jobs add column if not exists source_payload jsonb not null default '{}'::jsonb;
+alter table public.applications alter column candidate_id type text using candidate_id::text;
+alter table public.applications add column if not exists resume_used_id text;
+alter table public.applications add column if not exists cover_letter_used_id text;
+alter table public.applications add column if not exists details jsonb not null default '{}'::jsonb;
+alter table public.notifications add column if not exists message text default '';
+alter table public.notifications add column if not exists read_status boolean not null default false;
+alter table public.notifications add column if not exists archived boolean not null default false;
+alter table public.notifications add column if not exists urgent boolean not null default false;
+alter table public.offers add column if not exists details jsonb not null default '{}'::jsonb;
+alter table public.email_templates add column if not exists status text default '';
+alter table public.team_invites add column if not exists permissions jsonb not null default '[]'::jsonb;
+
+-- Existing installs originally used UUID ownership here. Text still accepts
+-- real auth UUIDs and also permits deterministic synthetic candidate IDs.
+alter table public.job_hunt_settings alter column user_id type text using user_id::text;
+alter table public.job_hunt_settings add column if not exists source_id text unique;
+alter table public.job_hunt_settings add column if not exists salary_min jsonb;
+alter table public.job_hunt_settings add column if not exists resume_selection_id text;
+alter table public.job_hunt_settings add column if not exists cover_letter_preference text;
+alter table public.job_hunt_settings add column if not exists approval_required boolean;
+alter table public.job_hunt_proposals alter column user_id type text using user_id::text;
+alter table public.job_hunt_proposals add column if not exists generated_proposal text default '';
+alter table public.job_hunt_proposals add column if not exists candidate_feedback text;
+alter table public.job_hunt_proposals add column if not exists updated_at timestamptz;
+alter table public.job_hunt_log alter column user_id type text using user_id::text;

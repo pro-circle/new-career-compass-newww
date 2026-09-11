@@ -180,6 +180,18 @@ function buildSeed(data) {
     email: text(users.get(row.user_id)?.email),
   }));
 
+  const companyRows = list(data["4. Companies"]).map((row) => ({
+    id: row.id, name: text(row.name), industry: text(row.industry), location: text(row.location),
+    website: text(row.website), description: text(row.description), team_size: String(row.team_size ?? ""),
+    logo_placeholder: text(row.logo_placeholder), created_at: row.created_at ?? null,
+  }));
+
+  const employerProfileRows = list(data["3. Employer profiles"]).map((row) => ({
+    id: row.id, source_user_id: row.user_id ?? null, company_id: row.company_id ?? null,
+    recruiter_profile: row.recruiter_profile ?? {}, notification_settings: row.notification_settings ?? {},
+    subscription_plan: text(row.subscription_plan), plan_status: text(row.plan_status),
+  }));
+
   const stageMap = {
     applied: "Applied",
     screening: "Screening",
@@ -206,8 +218,42 @@ function buildSeed(data) {
       progress: progressMap[stage],
       match_score: number(row.match_score),
       next_step: text(row.next_action),
+      resume_used_id: row.resume_used_id ?? null,
+      cover_letter_used_id: row.cover_letter_used_id ?? null,
+      details: {
+        candidateNotes: row.candidate_notes, notes: row.notes, recruiterNotes: row.recruiter_notes,
+        nextActionDate: row.next_action_date, previousStatuses: row.previous_statuses,
+        rejectionReason: row.rejection_reason, externalApplicationTracking: row.external_application_tracking,
+      },
     };
   });
+
+  const coverLetterRows = list(data["9. Cover letters"]).map((row) => ({
+    id: row.id, candidate_id: row.candidate_id, job_id: row.job_id ?? null,
+    hiring_manager_name: text(row.hiring_manager_name), company_name: text(row.company_name),
+    job_title: text(row.job_title), job_description: text(row.job_description),
+    candidate_highlights: list(row.candidate_highlights), tone: text(row.tone, "professional"),
+    length: text(row.length, "medium"), generated_content: text(row.generated_content),
+    draft_status: text(row.draft_status, "draft"), final_status: text(row.final_status, "not_final"),
+    created_at: row.created_date ?? null, updated_at: row.updated_date ?? null,
+  }));
+
+  const pipelineRows = list(data["15. Pipeline records"]).map((row) => ({
+    id: row.id, employer_id: row.employer_id ?? null, candidate_id: row.candidate_id,
+    job_id: row.job_id ?? null, stage: text(row.stage, "New"), candidate_notes: text(row.candidate_notes),
+    internal_tags: list(row.internal_tags), last_contact_at: row.last_contact_date ?? null,
+    next_follow_up_at: row.next_follow_up_date ?? null,
+    assigned_recruiter_user_id: row.assigned_recruiter_user_id ?? null,
+    stage_history: list(row.stage_history),
+  }));
+
+  const outreachRows = list(data["16. Outreach messages"]).map((row) => ({
+    id: row.id, employer_id: row.employer_id ?? null, recipient_candidate_id: row.recipient_candidate_id,
+    subject: text(row.subject), message: text(row.message), template_used_id: row.template_used_id ?? null,
+    delivery_status: text(row.delivery_status, "draft"), opened: Boolean(row.opened_status),
+    replied: Boolean(row.replied_status), sent_at: row.sent_date ?? null,
+    follow_up_at: row.follow_up_date ?? null, failure_message: text(row.failure_message),
+  }));
 
   const resumeRows = list(data["5. Resumes"]).map((row) => {
     const candidate = candidateById.get(row.candidate_id);
@@ -252,6 +298,10 @@ function buildSeed(data) {
     title: text(row.title),
     time: text(row.created_at),
     type: text(row.type),
+    message: text(row.message),
+    read_status: Boolean(row.read_status),
+    archived: Boolean(row.archived),
+    urgent: Boolean(row.urgent),
     created_at: row.created_at ?? null,
   }));
 
@@ -271,6 +321,7 @@ function buildSeed(data) {
       body: text(row.benefits_summary),
       status: ({ draft: "Drafted", sent: "Sent", accepted: "Signed", declined: "Declined" })[text(row.offer_status).toLowerCase()] ?? "Drafted",
       sent_at: row.offer_status === "sent" ? row.candidate_response_date ?? null : null,
+      details: { expirationDate: row.expiration_date, recruiterNotes: row.recruiter_notes, candidateResponseDate: row.candidate_response_date },
     };
   });
 
@@ -281,6 +332,7 @@ function buildSeed(data) {
     category: text(row.type, "General"),
     subject: text(row.name),
     body: text(row.body),
+    status: text(row.status),
   }));
 
   const teamInviteRows = list(data["19. Team members"]).map((row) => ({
@@ -289,7 +341,50 @@ function buildSeed(data) {
     email: text(users.get(row.user_id)?.email, `${row.id}@synthetic.example.invalid`),
     role: text(row.role, "Recruiter"),
     status: row.status === "active" ? "Active" : "Invited",
+    permissions: list(row.permissions),
   }));
+
+  const portfolioTemplateRows = list(data.portfolio_templates).map((row) => ({
+    id: row.id, name: text(row.name), category: text(row.category), sections: list(row.sections),
+    theme: row.theme ?? {}, active: Boolean(row.active),
+  }));
+
+  const jobHuntSettingsRows = list(data["21. Job-hunt settings"]).map((row) => ({
+    user_id: row.candidate_id, source_id: row.id, enabled: Boolean(row.enabled),
+    mode: row.approval_required === false ? "auto" : "review", min_score: 75,
+    daily_limit: number(row.max_applications_per_day), titles: list(row.target_roles),
+    locations: list(row.target_locations), remote_only: row.remote_preference === "remote_only",
+    use_resume: Boolean(row.resume_selection_id), use_portfolio: true, use_github: true,
+    salary_min: row.salary_min ?? null, resume_selection_id: row.resume_selection_id ?? null,
+    cover_letter_preference: text(row.cover_letter_preference), approval_required: Boolean(row.approval_required),
+  }));
+
+  const jobHuntRunRows = list(data["22. Job-hunt runs"]).map((row) => ({
+    id: row.id, candidate_id: row.candidate_id, started_at: row.started_date ?? null,
+    completed_at: row.completed_date ?? null, status: text(row.status), jobs_scanned: number(row.jobs_scanned),
+    jobs_matched: number(row.jobs_matched), applications_submitted: number(row.applications_submitted),
+    applications_skipped: number(row.applications_skipped), failure_message: text(row.failure_message),
+  }));
+
+  const proposalRows = list(data["23. Proposal drafts"]).map((row) => {
+    const job = jobById.get(row.job_id);
+    const company = companies.get(job?.company_id);
+    const status = ({ approved: "applied", rejected: "denied", pending: "pending", expired: "denied" })[row.approval_status] ?? "pending";
+    return { id: row.id, user_id: row.candidate_id, job_id: row.job_id, job_title: text(job?.title),
+      company: text(company?.name), location: text(job?.location), match_score: number(job?.match_scores_by_candidate?.[row.candidate_id]),
+      reason: text(row.match_explanation), status, generated_proposal: text(row.generated_proposal),
+      candidate_feedback: row.candidate_feedback ?? null, created_at: row.created_at ?? null, updated_at: row.updated_at ?? null };
+  });
+
+  const settingsSource = data["24. Application and account settings"] ?? {};
+  const accountSettingRows = [
+    ...list(settingsSource.candidate_settings).map((row) => ({ ...row, owner_type: "candidate", owner_id: row.candidate_id })),
+    ...list(settingsSource.employer_settings).map((row) => ({ ...row, owner_type: "employer", owner_id: row.employer_id })),
+  ].map((row) => ({ id: row.id, owner_type: row.owner_type, owner_id: row.owner_id,
+    profile_settings: row.profile_settings ?? {}, notification_preferences: row.notification_preferences ?? {},
+    privacy_preferences: row.privacy_preferences ?? {}, security_settings: row.security_settings ?? {},
+    email_preferences: row.email_preferences ?? {}, marketing_preferences: row.marketing_preferences ?? {},
+    application_visibility: text(row.application_visibility), availability_status: text(row.availability_status) }));
 
   const sessionRows = sessions.map((row) => {
     const job = jobById.get(row.job_id);
@@ -386,14 +481,24 @@ function buildSeed(data) {
   return {
     operations: [
       ["jobs", jobRows],
+      ["companies", companyRows],
+      ["employer_profiles", employerProfileRows],
       ["candidates", candidateRows],
       ["applications", applicationRows],
+      ["cover_letters", coverLetterRows],
+      ["pipeline_records", pipelineRows],
+      ["outreach_messages", outreachRows],
       ["notifications", notificationRows],
       ["resumes", resumeRows],
       ["portfolio_projects", portfolioRows],
       ["offers", offerRows],
       ["email_templates", templateRows],
       ["team_invites", teamInviteRows],
+      ["portfolio_templates", portfolioTemplateRows],
+      ["job_hunt_settings", jobHuntSettingsRows],
+      ["job_hunt_runs", jobHuntRunRows],
+      ["job_hunt_proposals", proposalRows],
+      ["account_settings", accountSettingRows],
       ["training_sessions", sessionRows],
       ["training_answers", answerRows],
       ["training_challenges", challengeRows],
@@ -410,12 +515,6 @@ function buildSeed(data) {
     skipped: [
       ["users / authentication accounts", list(data["1. Users"]).length, "synthetic identities and password placeholders are never imported"],
       ["candidate profiles", candidates.length, "profiles.id requires a real authentication UUID; candidates are imported instead"],
-      ["employer profiles and companies", list(data["3. Employer profiles"]).length + list(data["4. Companies"]).length, "no matching app tables; company fields are embedded into jobs"],
-      ["cover letters", list(data["9. Cover letters"]).length, "no matching app table"],
-      ["pipeline and outreach records", list(data["15. Pipeline records"]).length + list(data["16. Outreach messages"]).length, "no matching app tables"],
-      ["job-hunt settings, runs, and proposals", list(data["21. Job-hunt settings"]).length + list(data["22. Job-hunt runs"]).length + list(data["23. Proposal drafts"]).length, "destination ownership requires real authentication UUIDs"],
-      ["application/account settings", Object.values(data["24. Application and account settings"] ?? {}).flat().length, "source settings do not safely map without authentication accounts"],
-      ["portfolio templates", list(data.portfolio_templates).length, "no matching app table"],
     ],
   };
 }
