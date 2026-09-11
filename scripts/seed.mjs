@@ -158,6 +158,7 @@ function buildSeed(data) {
       salary: salaryLabel(row.salary_range),
       description: [text(row.description), ...list(row.responsibilities)].filter(Boolean).join("\n\n"),
       tags: [...new Set([...list(row.required_skills), ...list(row.preferred_skills)])],
+      source_payload: row,
     };
   });
 
@@ -480,8 +481,8 @@ function buildSeed(data) {
 
   return {
     operations: [
-      ["jobs", jobRows],
       ["companies", companyRows],
+      ["jobs", jobRows],
       ["employer_profiles", employerProfileRows],
       ["candidates", candidateRows],
       ["applications", applicationRows],

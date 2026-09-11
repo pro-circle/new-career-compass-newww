@@ -63,9 +63,6 @@ Recruiters (employer role): recruiter@northstar-works-demo.com,
 noah.patel@demo.org, team_003@synthetic.example.com,
 talent@blueorbit-labs-demo.com, maya.chen@demo.org
 
-samira.okafor@demo.com appears in both source lists; one address can only be
-one account, so it is kept as a candidate and reported as a duplicate.
-
 The password is taken from `SEED_DEMO_PASSWORD` in `.env` and falls back to
 `DemoPass!2026`. Re-running the command reuses existing accounts and resets
 their password to the same value. Use demo passwords in demo projects only.
